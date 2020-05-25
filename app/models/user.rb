@@ -5,10 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :players
-  has_many :activites, through: :players
+  has_many :activities
+  has_many :activities_joined, through: :players, source: :activities
   has_many :sports, through: :sports_users
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 4}, 
-  validates :gender, presence: true, inclusion { in: %w(Man Lady)}
-  validates :description, presence: true, length { minimum: 20}
+  validates :gender, presence: true, inclusion { in: %w[Male Female]}
 end
