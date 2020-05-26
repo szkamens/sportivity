@@ -2,6 +2,7 @@ class Activity < ApplicationRecord
   belongs_to :user
   belongs_to :sport
   has_many :players
+  has_many :users, through: :players
 
   validates :title, presence: true
   validates :start_time, presence: true

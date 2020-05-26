@@ -1,15 +1,25 @@
 <h1>Activities</h1>
 <div>
   <% @activities.each do |activity| %>
+  <% unless activity.players.count == activity.player_limit %>
   <div>
     <p><strong>Sport: </strong><%= activity.sport.name %></p>
     <p><strong>Activitiy Name: <%= activity.title %></strong></p>
-    <p><strong>Start Time: </strong><%= activity.start_time %></p>
+    <p><strong>Start Time: </strong><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
     <p><strong>Location: </strong><%= activity.location %></p>
     <p><strong>Host: </strong><%= activity.user.username %></p>
-    <p><strong>Players: </strong><%= activity.user.username %></p>
+    <p><strong>Players: </strong>
+    <% if activity.players.count > 4 %>
+      <%= activity.users.take(3).map { |u| u.username }.join(', ') %> +<%= activity.players.count - 3 %> 
+      <% else %> 
+      <%= activity.users.take(3).map { |u| u.username }.join(', ') %>
+    <% end %>
+    </p>
+
+    <p><strong>Players needed: </strong><%= activity.player_limit - activity.players.count%></p>
     </div>
     <br>
     <br>
+  <% end %>
   <% end %>
 </div>
