@@ -1,25 +1,45 @@
-<h1>Activities</h1>
-<div>
-  <% @activities.each do |activity| %>
-  <% unless activity.players.count == activity.player_limit %>
+<div class='container index mt-3 mb-10 py-4 px-4 '>
+  <h1>Activities</h1>
   <div>
-    <p><strong>Sport: </strong><%= activity.sport.name %></p>
-    <p><strong>Activitiy Name: <%= activity.title %></strong></p>
-    <p><strong>Start Time: </strong><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
-    <p><strong>Location: </strong><%= activity.location %></p>
-    <p><strong>Host: </strong><%= activity.user.username %></p>
-    <p><strong>Players: </strong>
-    <% if activity.players.count > 4 %>
-      <%= activity.users.take(3).map { |u| u.username }.join(', ') %> +<%= activity.players.count - 3 %> 
-      <% else %> 
-      <%= activity.users.take(3).map { |u| u.username }.join(', ') %>
+    <% @activities.each do |activity| %>
+    <% unless activity.players.count == activity.player_limit %>
+    <div>
+      <div class="card-activity-index">
+        <img src="https://source.unsplash.com/1600x900/?<%= activity.sport.name %>" />
+        <div class="card-activity-index-infos border-bottom">
+          <div>
+            <h2 class='mb-2'><%= activity.title %></h2>
+            <p class='mb-1'><%= activity.location %></p>
+            <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
+          </div>
+          <a class="card-activity-index-btn btn btn-sport" href="#"><%= activity.sport.name %></a>
+        </div>
+        <div class="card-activity-index-players">
+          <div class="card-activity-index-host">
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-large" />
+            <div class="card-activity-index-player">
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
+              <span>+<%= activity.players.count - 3 %> </span>
+              <span><em>&nbsp;&nbsp;&nbsp;<%= activity.player_limit - activity.players.count%> needed</em></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p><strong>Host: </strong><%= activity.user.username %></p>
+      <p><strong>Players: </strong>
+      <% if activity.players.count > 4 %>
+        <%= activity.users.take(3).map { |u| u.username }.join(', ') %> +<%= activity.players.count - 3 %> 
+        <% else %> 
+        <%= activity.users.take(3).map { |u| u.username }.join(', ') %>
+      <% end %>
+      </p>
+      </div>
     <% end %>
-    </p>
-
-    <p><strong>Players needed: </strong><%= activity.player_limit - activity.players.count%></p>
-    </div>
-    <br>
-    <br>
-  <% end %>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
+
