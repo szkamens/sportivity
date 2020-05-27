@@ -1,0 +1,102 @@
+
+.card-activity-index {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 28px;
+  border: 1px solid #f46b27;
+}
+
+.card-activity-index > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-activity-index h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-activity-index p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.card-activity-index .card-activity-index-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: -14px;
+}
+
+.card-activity-index-infos .card-activity-index-btn{
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  width: fit-content;
+}
+
+.card-activity-index .card-activity-index-players {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-around;
+}
+
+.card-activity-index-players p {
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+}
+
+.card-activity-index-players .card-activity-index-host {
+  bottom: auto;
+  left: 16px;
+  top: -14px;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+}
+
+.card-activity-index-players .card-activity-index-player {
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: 4px;
+}
+
+.card-activity-index-players .card-activity-index-ct {
+  align-self: center;
+  margin-left: 4px;
+}
+
+.card-activity-index-players .card-activity-index-nd {
+  align-self: center;
+  margin-left: 4px;
+  margin-bottom: 18px;
+  margin-right: 41px;
+}
+
+.container-index {
+  background-color: #161d27;
+  padding: 0 90px;
+}
+
+.absolute-0-0 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:5;
+}

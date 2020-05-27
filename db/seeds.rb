@@ -39,6 +39,7 @@ descriptions << "Looking for another people to play around my area!"
 descriptions << "I consider myself a good partner to do sports!"
 
 
+
 ############################# Destroy database #############################
 ## Cleaning Database
 puts 'Cleaning database...'
