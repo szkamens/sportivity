@@ -1,3 +1,9 @@
+.container-index {
+  background-color: #161d27;
+  padding: 0 90px;
+  height: 600px;
+}
+
 .card-activity-show {
   overflow: hidden;
   background: white;
@@ -8,7 +14,7 @@
 }
 
 .card-activity-show > img {
-  height: 150px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
@@ -24,9 +30,16 @@
   margin: 0;
 }
 
-.card-activity-show .card-activity-show-infos {
+//.card-activity-show  {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
+
+.card-activity-show-infos {
   padding: 16px;
-  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -43,27 +56,10 @@
 .card-activity-show .card-activity-show-frame {
   padding: 21px;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   position: relative;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
-.card-activity-show-players p {
-  justify-content: space-between;
-  align-items: flex-end;
-  position: absolute;
-  font: blue;
-}
-
-
-.card-activity-show-skill p {
-  font: blue;
-  position: absolute;
-}
-
-
-.container-index {
-  background-color: #161d27;
-  padding: 0 90px;
-  height: 600px;
-}
