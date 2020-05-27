@@ -13,4 +13,16 @@ class Activity < ApplicationRecord
   validates :description, presence: true
   validates :sport, presence: true
   validates :user, presence: true
+
+  def is_owner?(user)
+    self.user == user
+  end
+
+  def is_player?(user)
+    self.users.include?(user)
+  end
+
+  def add_player(user, invitation = false)
+    Player.create!(user: user, activity: self, invitation: invitation)
+  end
 end

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :activities, only: %i[index new create]
+
+  get '/activities/:id', to: 'activities#show'
 end

@@ -3,6 +3,13 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
   end
 
+
+
+
+  def show
+    @activity = Activity.find(params[:id])
+  end
+
   def new
     @activity = Activity.new
   end
@@ -21,5 +28,6 @@ class ActivitiesController < ApplicationController
   def set_activity
     @activity = Activity.find(params[:id])
   end
+
 
 end
