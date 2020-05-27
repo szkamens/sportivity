@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+
 puts "Seeding Users"
 user1 = User.new(username: "Boby", email: "bob@bob.com", password:"123456", password_confirmation: "123456", description: "Good at tennis", gender:"Male")
 user1.save
@@ -16,6 +18,6 @@ activity1 = Activity.new(title: "5 a side", start_time: "8pm", end_time:"10pm", 
 activity1.save
 puts "Seeding done congrats, #{Activity.count} activities created !"
 
-
 sport1 = Sport.new (name: "Football")
 sport1.save
+
