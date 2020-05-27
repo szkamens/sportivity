@@ -18,6 +18,6 @@ activity1 = Activity.new(title: "5 a side", start_time: "8pm", end_time:"10pm", 
 activity1.save
 puts "Seeding done congrats, #{Activity.count} activities created !"
 
-sport1 = Sport.new (name: "Football")
+sport1 = Sport.new(name: "Football")
 sport1.save
 
