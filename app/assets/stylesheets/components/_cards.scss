@@ -4,6 +4,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 28px;
+  border: 1px solid #f46b27;
 }
 
 .card-activity-index > img {
@@ -46,10 +47,11 @@
   position: relative;
 }
 
-.card-activity-index .card-activity-index-players p {
+.card-activity-index-players p {
   justify-content: space-between;
   align-items: flex-end;
   position: absolute;
+  font: blue;
 }
 
 .card-activity-index-players .card-activity-index-host {
@@ -72,7 +74,7 @@
   align-items: flex-end;
 }
 
-.container .index {
+.container-index {
   background-color: #161d27;
   padding: 0 90px;
 }

@@ -1,10 +1,10 @@
-<div class='container index mt-3 mb-10 py-4 px-4 '>
+<div class='container-index mb-10 p-3 '>
   <h1>Activities</h1>
   <div>
     <% @activities.each do |activity| %>
     <% unless activity.players.count == activity.player_limit %>
     <div>
-      <div class="card-activity-index">
+      <div class="card-activity-index"> 
         <img src="https://source.unsplash.com/1600x900/?<%= activity.sport.name %>" />
         <div class="card-activity-index-infos border-bottom">
           <div>
@@ -15,14 +15,16 @@
           <a class="card-activity-index-btn btn btn-sport" href="#"><%= activity.sport.name %></a>
         </div>
         <div class="card-activity-index-players">
-          <div class="card-activity-index-host">
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-large" />
+          <div class="mr-8 card-activity-index-host">
+            <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
             <div class="card-activity-index-player">
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
+              <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
+              <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
+              <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
               <span>+<%= activity.players.count - 3 %> </span>
-              <span><em>&nbsp;&nbsp;&nbsp;<%= activity.player_limit - activity.players.count%> needed</em></span>
+              <div class=''>
+                <p><em><%= activity.player_limit - activity.players.count%> needed</em></p>
+              </div>
             </div>
           </div>
         </div>
