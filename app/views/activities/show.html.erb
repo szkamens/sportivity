@@ -13,7 +13,7 @@
       <a class="card-activity-show-btn btn btn-sport" href="#"><%= @activity.sport.name %></a>
       <div class="card-activity-show-frame">
         <div class="card-activity-show-players">
-          <p> Limit: </p>
+          <p> <strong>Limit: </strong> </p>
           <p> <strong> <%= @activity.players.count %>  </strong> playing</p>
           <p>  <strong> <%= @activity.player_limit - @activity.players.count %> </strong>  needed </p>
         </div>
@@ -22,6 +22,7 @@
           <p> <%= @activity.skill_level%></p>
         </div>
       </div>
+
 
       <% if @activity.is_owner?(current_user) %>
       <%= link_to "Cancel", root_path, class: "btn btn-primary"%>
@@ -35,6 +36,7 @@
       <%= link_to "Join", root_path, class: "btn btn-primary"%>
 
       <% end %>
+
     </div>
   </div>
 </div>
