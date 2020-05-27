@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  
+
   def index
     @activities = Activity.all
   end
@@ -21,6 +21,16 @@ class ActivitiesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @activity = Activity.find(params[:id])
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+    @activity.update(activities_params)
+    redirect_to activity_path(@activity)
   end
 
   def destroy
