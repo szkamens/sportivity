@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
-
-
-
+  def index
+    @activities = Activity.all
+  end
 
   def show
     @activity = Activity.find(params[:id])
@@ -25,6 +25,4 @@ class ActivitiesController < ApplicationController
   def set_activity
     @activity = Activity.find(params[:id])
   end
-
-
 end
