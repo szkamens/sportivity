@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   
-  resources :activities, only: %i[index new create show]
-  
+  resources :activities, only: [:index, :new, :create, :show, :destroy]
+
 end
