@@ -3,8 +3,8 @@
   <div>
     <% @activities.each do |activity| %>
     <% unless activity.players.count == activity.player_limit %>
-    <div>
       <div class="card-activity-index"> 
+      
         <img src="https://source.unsplash.com/1600x900/?<%= activity.sport.name %>" />
         <div class="card-activity-index-infos border-bottom">
           <div>
@@ -14,21 +14,26 @@
           </div>
           <a class="card-activity-index-btn btn btn-sport" href="#"><%= activity.sport.name %></a>
         </div>
+
         <div class="card-activity-index-players">
           <div class="mr-8 card-activity-index-host">
             <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
-            <div class="card-activity-index-player">
-              <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
-              <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
-              <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
-              <span>+<%= activity.players.count - 3 %> </span>
-              <div class=''>
-                <p><em><%= activity.player_limit - activity.players.count%> needed</em></p>
-              </div>
-            </div>
+          </div>
+          <div class="card-activity-index-player">
+            <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
+            <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
+            <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
+          <div class='card-activity-index-ct'>
+            <span>+<%= activity.players.count - 3 %> </span>
+          </div>
+          </div>
+          <div class='card-activity-index-nd'>
+            <p><em><strong><%= activity.player_limit - activity.players.count%> players needed</em></strong></p>
           </div>
         </div>
+        <%= link_to '', root_path, class: 'absolute-0-0' %>
       </div>
+  
       <br>
       <p><strong>Host: </strong><%= activity.user.username %></p>
       <p><strong>Players: </strong>
@@ -38,10 +43,7 @@
         <%= activity.users.take(3).map { |u| u.username }.join(', ') %>
       <% end %>
       </p>
-      </div>
     <% end %>
     <% end %>
   </div>
 </div>
-
-
