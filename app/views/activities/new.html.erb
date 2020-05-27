@@ -5,14 +5,16 @@
     <%= f.input :end_time, as: :string, required: true, input_html: {class: "datepicker"} %>
     <%= f.input :title, label: "Activity's name", placeholder: 'My Activity', input_html: { maxlength: 20 } %>
     <%= f.input :location, input_html: {id:'activity_location'} %>
-    <%= f.input :sport, :collection => %w[Basketball Tennis Football Running Volleyball Yoga] %>
+    <%= f.association :sport %>
+    <%= f.input :skill_level, collection: %w[Beginner Intermediate Pro], required: true %>
+    <%= f.input :description, required: false %>
     <div class="form-group">
       <label for="rangePlayer">Player limit</label>
       <br>
       <input type="range" name="activity[player_limit]" id="playerInputId" value="10" min="1" max="20" oninput="playerOutputId.value = playerInputId.value">
       <output name="playerOutputName" id="playerOutputId">10</output>
     </div>
-    <%= f.button :button, "Done!" %>
+    <%= f.submit %>
   <% end %>
 
 <%= javascript_pack_tag 'init_auto_complete' %>
