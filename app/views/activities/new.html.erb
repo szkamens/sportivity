@@ -1,0 +1,63 @@
+<div class="container">
+  <br>
+  <%= simple_form_for @activity do |f| %>
+    <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.input :end_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.input :title, label: "Activity's name", placeholder: 'My Activity', input_html: { maxlength: 20 } %>
+    <%= f.input :location, input_html: {id:'activity_location'} %>
+    <%= f.input :sport, :collection => %w[Basketball Tennis Football Running Volleyball Yoga] %>
+    <div class="form-group">
+      <label for="rangePlayer">Player limit</label>
+      <br>
+      <input type="range" name="activity[player_limit]" id="playerInputId" value="10" min="1" max="20" oninput="playerOutputId.value = playerInputId.value">
+      <output name="playerOutputName" id="playerOutputId">10</output>
+    </div>
+    <%= f.button :button, "Done!" %>
+  <% end %>
+
+<%= javascript_pack_tag 'init_auto_complete' %>
+
+
+
+
+
+
+
+
+
+<!-- <br>
+  <form>
+
+    <div class="form-group">
+      <label for="rangePlayer">Player limit</label>
+      <br>
+      <input type="range" name="playerInputName" id="playerInputId" value="10" min="1" max="20" oninput="playerOutputId.value = playerInputId.value">
+      <output name="playerOutputName" id="playerOutputId">10</output>
+    </div>
+    <div class="level">
+      <label for="activityDetails">Level requirements</label>
+      <br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Any</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Beginner</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Intermediate</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Pro</label>
+      </div>
+    </div>
+  </form>
+</div> -->
+
+
+
+
+
