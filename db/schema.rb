@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_125420) do
 
   create_table "players", force: :cascade do |t|
     t.datetime "accepted_at"
-    t.boolean "invitation"
+    t.boolean "invitation", default: false
     t.bigint "activity_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
