@@ -1,9 +1,8 @@
-<div class='container mb-10 p-3 '>
+<div class='container p-0 mb-10'>
   <% if @user == current_user %>
-    <p>This is YOUR page</p>
-    <div>
-      <%= image_tag "profile_def.jpg", class: 'card-activity-image' %>
-    </div>
+  <div class='container-banner'>
+    <%= image_tag "profile_def.jpg", class: 'banner', width: 400 %>
+  </div>
     <div>
       <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
     </div>
@@ -15,7 +14,6 @@
     <% current_user.sports.each  do |s| %>
      <a class="btn-sport" href="#"> <%= s.name %> </a>
       <% end %>
-
   <% else %>
     <p>This is NOT your page</p>
   <% end %>
