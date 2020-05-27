@@ -10,6 +10,6 @@ class User < ApplicationRecord
   has_many :sports, through: :sports_users
   has_one_attached :photo
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 4}
+  validates :username, presence: true, uniqueness: true, length: { minimum: 3}
   validates :gender, presence: true, inclusion: { in: %w[Male Female] }
 end
