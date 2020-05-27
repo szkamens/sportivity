@@ -1,25 +1,33 @@
 <div class="container">
   <br>
+  <%= simple_form_for @activity do |f| %>
+    <%= f.input :start_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.input :end_time, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.input :title, label: "Activity's name", placeholder: 'My Activity', input_html: { maxlength: 20 } %>
+    <%= f.input :location, input_html: {id:'activity_location'} %>
+    <%= f.input :sport, :collection => %w[Basketball Tennis Football Running Volleyball Yoga] %>
+    <div class="form-group">
+      <label for="rangePlayer">Player limit</label>
+      <br>
+      <input type="range" name="activity[player_limit]" id="playerInputId" value="10" min="1" max="20" oninput="playerOutputId.value = playerInputId.value">
+      <output name="playerOutputName" id="playerOutputId">10</output>
+    </div>
+    <%= f.button :button, "Done!" %>
+  <% end %>
+
+<%= javascript_pack_tag 'init_auto_complete' %>
+
+
+
+
+
+
+
+
+
+<!-- <br>
   <form>
-    <div class="form-group">
-      <label for="activityDetails">Activity's Name</label>
-      <input type="name" class="form-control" id="activityDetails" placeholder="My Activity">
-    </div>
-    <div class="form-group">
-      <label for="activityDetails">Where are you playing?</label>
-      <input type="text" class="form-control" placeholder="Location">
-    </div>
-    <div class="form-group">
-      <label for="activityDetails">Select your sport</label>
-      <select class="form-control" id="sportList">
-        <option>Soccer</option>
-        <option>Tennis</option>
-        <option>Running</option>
-        <option>Basketball</option>
-        <option>Volleyball</option>
-        <option>Yoga</option>
-      </select>
-    </div>
+
     <div class="form-group">
       <label for="rangePlayer">Player limit</label>
       <br>
@@ -46,13 +54,10 @@
         <label class="form-check-label" for="inlineCheckbox2">Pro</label>
       </div>
     </div>
-    <br>
-    <div class="form-group">
-      <label for="activityDetails">Description</label>
-      <textarea class="form-control" id="activityDetailsDescription" rows="1"></textarea>
-    </div>
   </form>
-  <div class="btn btn-primary">
-    <%= link_to 'Done', root_path, :class => "btn-done" %>
-  </div>
-</div>
+</div> -->
+
+
+
+
+
