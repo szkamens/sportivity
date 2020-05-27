@@ -2,6 +2,10 @@ en:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
+    extension:
+      file:
+        select: 'Select a file'
+        change: ''
     required:
       text: 'required'
       mark: '*'
