@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :activities
+  
+  get 'users/me', to: 'users#me', as: :me
+  resources :users, only: :show
 end
