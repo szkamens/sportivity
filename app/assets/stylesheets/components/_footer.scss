@@ -1,0 +1,31 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #161d27;
+  justify-content: space-between;
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.footer-icon img {
+  height: 30px;
+  margin-right: 60px;
+}
+
+.nobull {
+  list-style-type: none;
+}
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
