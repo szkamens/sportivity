@@ -1,13 +1,59 @@
 .container-dashboard {
+  background-color: #161d27;
+  color: white;
+}
+
+.welcome-message-dashboard {
+  margin-top: 30px;
+}
+
+
+.info-dashboard {
+  margin-top: 30px;
+}
+
+.dashboard-first-2-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin-top: 30px;
 }
 
 .row-1-dashboard {
-  border-color: red;
+  border-color: #f46b27;
   border-style: solid;
   border-radius: 7px;
-  height: 50%;
-  width: 50%;
+  height: 80px;
+  width: 80px;
   text-align: center;
-  vertical-align: center;
+  align-items: center;
 }
 
+.favourite-sport-dashboard  {
+  margin-top: 30px;
+}
+
+.dashboard-next-activity-info {
+  justify-items: center;
+  text-align: center;
+  border-color: #f46b27;
+  border-style: solid;
+  border-radius: 7px;
+  border: auto;
+  margin-top: 30px;
+}
+
+.actions-icon-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fas {
+ font-size: 40px;
+ color: #F46B27;
+}
+
+.fas:hover {
+  opacity: 0.5;
+}
