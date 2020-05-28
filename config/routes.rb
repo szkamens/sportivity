@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :activities
   
-  get 'users/me', to: 'users#me', as: :me
+  get 'users/:id', to: 'users#me', as: :me
   resources :users, only: :show
 end
