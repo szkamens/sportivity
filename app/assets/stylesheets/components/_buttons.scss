@@ -1,9 +1,25 @@
 .btn-sport {
+  color: white !important;
+  font-size: x-small;
+  padding: 8px 24px;
+  border-radius: 180px;
+  background: #161d27;
+  border: 1px solid #f46b27;
+}
+.btn-sport-fav-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 40px;
+}
+.btn-sport-fav {
   color: white;
   font-size: x-small;
   padding: 8px 24px;
   border-radius: 180px;
   background: #161d27;
-  transition: background 0.3s ease;
   border: 1px solid #f46b27;
+  margin: 8px;
 }

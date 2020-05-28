@@ -1,0 +1,23 @@
+<% if @user == current_user %>
+<div class='container-banner'>
+  <%= image_tag "yoga.jpg", class: 'banner', width: 400 %>
+  <div>
+    <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="container-banner avatar-x-large {" />
+  </div>
+</div>
+
+<div class='card-act-created'>
+  <p>Activites created: <strong><%= @user.activities.count %></strong> </p>
+</div>
+<div class='btn-sport-fav-flex' >
+<% @user.sports.each  do |s| %>
+  <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
+  <% end %>
+      <%= link_to "+ / -", root_path, class: "btn-sport-fav"%>
+</div> 
+<div class='card-act-desc'>
+<p>" <%= User.find(158).description %> "</p>
+</div>
+<% else %>
+  <p>This is NOT your page</p>
+<% end %>

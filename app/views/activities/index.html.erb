@@ -3,39 +3,39 @@
   <div>
     <% @activities.each do |activity| %>
     <% unless activity.players.count == activity.player_limit %>
-      <div class="card-activity-index"> 
-      
-        <img src="https://source.unsplash.com/1600x900/?<%= activity.sport.name %>" />
-        <div class="card-activity-index-infos border-bottom">
-          <div>
-            <h2 class='mb-2'><%= activity.title %></h2>
-            <p class='mb-1'><%= activity.location %></p>
-            <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
+      <%= link_to(activity_path(activity)) do %>
+        <div class="card-activity-index"> 
+          <%= image_tag "#{activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
+          <div class="card-activity-index-infos border-bottom">
+            <div>
+              <h2 class='mb-2'><%= activity.title %></h2>
+              <p class='mb-1'><%= activity.location %></p>
+              <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
+            </div>
+            <a class="card-activity-index-btn btn btn-sport" href="#"><%= activity.sport.name %></a>
           </div>
-          <a class="card-activity-index-btn btn btn-sport" href="#"><%= activity.sport.name %></a>
+          <div class="card-activity-index-players">
+            <div class="mr-8 card-activity-index-host">
+              <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
+            </div>
+            <div class="card-activity-index-player">
+              <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
+              <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
+              <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
+            <div class='card-activity-index-ct'>
+              <span>+<%= activity.players.count - 3 %> </span>
+            </div>
+            </div>
+            <div class='card-activity-index-nd'>
+              <p><em><strong><%= activity.player_limit - activity.players.count%> players needed</strong></em></p>
+            </div>
+          </div>
         </div>
-
-        <div class="card-activity-index-players">
-          <div class="mr-8 card-activity-index-host">
-            <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
-          </div>
-          <div class="card-activity-index-player">
-            <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
-            <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
-            <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
-          <div class='card-activity-index-ct'>
-            <span>+<%= activity.players.count - 3 %> </span>
-          </div>
-          </div>
-          <div class='card-activity-index-nd'>
-            <p><em><strong><%= activity.player_limit - activity.players.count%> players needed</em></strong></p>
-          </div>
-        </div>
-        <%= link_to '', activity_path(activity), class: 'absolute-0-0' %>
-      </div>
+      <% end %>
+      <p></p>
   
   <%# begin comment %>
-      <%# <p><strong>Host: </strong><%= activity.user.username %></p>
+      <!--<%# <p><strong>Host: </strong><%= activity.user.username %></p>-->
       <%# <p><strong>Players: </strong> %>
       <%# <% if activity.players.count > 4 %>
         <%# <%= activity.users.take(3).map { |u| u.username }.join(', ') %> 

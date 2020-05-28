@@ -1,8 +1,9 @@
 class Activity < ApplicationRecord
   belongs_to :user
   belongs_to :sport
-  has_many :players
+  has_many :players, :dependent => :delete_all
   has_many :users, through: :players
+
 
   validates :title, presence: true
   validates :start_time, presence: true
@@ -13,6 +14,7 @@ class Activity < ApplicationRecord
   validates :description, presence: true
   validates :sport, presence: true
   validates :user, presence: true
+
 
   def is_owner?(user)
     self.user == user
