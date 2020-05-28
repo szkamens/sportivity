@@ -7,10 +7,14 @@
   border: 1px solid #f46b27;
 }
 
-.card-activity-index > img {
+.card-activity-index > img, .card-activity-index img.card-activity-image  {
   height: 150px;
   width: 100%;
   object-fit: cover;
+}
+
+.card-activity-index a {
+  color: #0E0000;
 }
 
 .card-activity-index h2 {

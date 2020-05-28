@@ -23,6 +23,16 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def edit
+    @activity = Activity.find(params[:id])
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+    @activity.update(activities_params)
+    redirect_to activity_path(@activity)
+  end
+
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
