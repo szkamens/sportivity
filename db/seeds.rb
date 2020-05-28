@@ -37,8 +37,9 @@ descriptions << "Sport lover!"
 descriptions << "I just moved to Tel Aviv and wanna practice sports with other people"
 descriptions << "Looking for another people to play around my area!"
 descriptions << "I consider myself a good partner to do sports!"
-
-
+descriptions << "I pay the coke dont matter the result!"
+descriptions << "Wondering playing with people of my same skill level!"
+descriptions << "I use to play this sport when I was child!"
 
 ############################# Destroy database #############################
 ## Cleaning Database
@@ -98,10 +99,10 @@ ariels_soccer_match = Activity.create!(
   user: ariel,
   sport: sports[:football],
   title: "Friendly 5-on-5 football",
-  description: "come and play soccer with my team!"
+  description: "Come and play soccer with my team!"
 )
 puts "ariels_soccer_match created"
-
+ariels_soccer_match.add_player(ariel)
 
 schneur = User.create!(email: 'schneur@schneur.com', password: '123456', gender: 'Male', username: 'schneur')
 
@@ -120,7 +121,7 @@ schneurs_tennis_match = Activity.create!(
   description: "Come & Join me. The loser pays the coke!"
 )
 puts "schneurs_tennis_match created"
-
+schneurs_tennis_match.add_player(schneur)
 
 naftali = User.create!(email: 'naftali@naftali.com', password: '123456', gender: 'Male', username: 'naftali')
 
@@ -139,7 +140,7 @@ naftalis_yoga_session = Activity.create!(
   description: "Come & Relax with nice people!"
 )
 puts "naftalis_yoga_session created"
-
+naftalis_yoga_session.add_player(naftali)
 
 vincent = User.create!(email: 'vincent@vincent.com', password: '123456', gender: 'Male', username: 'vincent')
 
@@ -158,7 +159,7 @@ vincents_running_session = Activity.create!(
   description: "I will teach you the best technic for running in hard surfaces!"
 )
 puts "vincents_running_session created"
-
+vincents_running_session.add_player(vincent)
 
 omer = User.create!(email: 'omer@omer.com', password: '123456', gender: 'Male', username: 'omer')
 
@@ -177,15 +178,55 @@ omers_basketball_match = Activity.create!(
   description: "Now I like playing for hobby. Glad if you join me! 4 teams of 4 players!"
 )
 puts "omers_basketball_match created"
+omers_basketball_match.add_player(omer)
 
+david = User.create!(email: 'david@david.com', password: '123456', gender: 'Male', username: 'david')
+
+puts "creating davids_basketball_match"
+SportUser.create!(user: david, sport: sports[:basketball], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+davids_basketball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 8,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: david,
+  sport: sports[:basketball],
+  title: "Best Israel basketball match!",
+  description: "Are you sure you can defeat me and my friends?"
+)
+puts "davids_basketball_match created"
+davids_basketball_match.add_player(david)
+
+yair = User.create!(email: 'yair@yair.com', password: '123456', gender: 'Male', username: 'yair')
+
+puts "creating yairs_basketball_match"
+SportUser.create!(user: yair, sport: sports[:basketball], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+yairs_basketball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 4,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: yair,
+  sport: sports[:basketball],
+  title: "Come and try your skills!",
+  description: "Prefer practicing Karate... but let give it a try to this sport!"
+)
+puts "yairs_basketball_match created"
+yairs_basketball_match.add_player(yair)
+
+
+Player.create!(activity: davids_basketball_match, user: omer, accepted_at: Time.now)
+Player.create!(activity: yairs_basketball_match, user: omer, accepted_at: Time.now)
 
 # ///// ARRAY OF EVENTS OR ACTIVITIES ////
 
 activities_to_do = [ariels_soccer_match, schneurs_tennis_match,
-                    naftalis_yoga_session, vincents_running_session, omers_basketball_match]
-
-
-
+                    naftalis_yoga_session, vincents_running_session, omers_basketball_match,
+                    davids_basketball_match, yairs_basketball_match]
 
 # /////////////////////////////////// ITERATE JOINING GAME SOCCER-INTERMIDATE ///////////////////////////////////
 
