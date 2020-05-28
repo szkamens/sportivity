@@ -44,10 +44,15 @@ descriptions << "I consider myself a good partner to do sports!"
 ## Cleaning Database
 puts 'Cleaning database...'
 Player.destroy_all
+p 1
 Activity.destroy_all
+p 2
 SportUser.destroy_all
+p 3
 Sport.destroy_all
+p 4
 User.destroy_all
+p 5
 
 
 ############################# SPORTS TABLE #############################

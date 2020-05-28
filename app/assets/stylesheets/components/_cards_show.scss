@@ -1,32 +1,40 @@
+.container-index {
+  background-color: #161d27;
+  padding: 0 90px;
+  height: 600px;
+}
+
 .card-activity-show {
-  overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 28px;
-  border: 1px solid #f46b27;
   height: 580px;
 }
 
 .card-activity-show > img {
-  height: 150px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-activity-show h2 {
-  font-size: 16px;
+  font-size: 22px;
+  margin-bottom: 15px;
   font-weight: bold;
-  margin: 0;
 }
 
 .card-activity-show p {
   font-size: 12px;
-  margin: 0;
 }
 
-.card-activity-show .card-activity-show-infos {
+//.card-activity-show  {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
+
+.card-activity-show-infos {
   padding: 16px;
-  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -41,29 +49,48 @@
 }
 
 .card-activity-show .card-activity-show-frame {
-  padding: 21px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
-.card-activity-show-players p {
-  justify-content: space-between;
-  align-items: flex-end;
-  position: absolute;
-  font: blue;
+.card-activity-show-frame {
+  margin-bottom: 12px;
 }
 
-
-.card-activity-show-skill p {
-  font: blue;
-  position: absolute;
+.card-activity-show-frame p{
+  margin: 0;
 }
 
+.show-paragraph p{
+  margin-bottom: 12px;
+}
 
-.container-index {
+.divider-vertical{
+  width: 1px;
+  height: 50px;
   background-color: #161d27;
-  padding: 0 90px;
-  height: 600px;
+
+}
+
+.show-btn-action {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+
+}
+
+.btn-action {
+  background-color: #f46b27;
+  color: #161d27;
+  border-radius: 180px;
+  padding: 8px 24px;
+  border: 0.2px solid #161d27;
+  font-weight: bold;
 }
