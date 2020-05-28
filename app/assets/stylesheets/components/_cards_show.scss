@@ -1,12 +1,12 @@
 .container-index {
   background-color: #161d27;
   padding: 0 90px;
-  height: 600px;
+  height: 100vh;
 }
 
 .card-activity-show {
   background: white;
-  height: 580px;
+  height: 35rem;
 }
 
 .card-activity-show > img {
@@ -93,4 +93,17 @@
   padding: 8px 24px;
   border: 0.2px solid #161d27;
   font-weight: bold;
+}
+
+
+.arrow {
+  border: solid #f46b27;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
