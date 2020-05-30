@@ -8,7 +8,7 @@
           <% end %>
         </li>
         <li>
-          <%= link_to root_path, class: "footer-icon" do %>
+          <%= link_to dashboard_path, class: "footer-icon" do %>
           <%= image_tag("star.png") %>
           <% end %>
         </li>
@@ -18,12 +18,12 @@
           <% end %>
         </li>
         <li>
-          <%= link_to root_path, class: "footer-icon" do %>
+          <%= link_to activities_path(@activities), class: "footer-icon" do %>
           <%= image_tag("user.png") %>
           <% end %>
         </li>
         <li>
-          <%= link_to root_path, class: "footer-icon" do %>
+          <%= link_to activities_path(@activities), class: "footer-icon" do %>
           <%= image_tag("chat.png") %>
           <% end %>
         </li>
