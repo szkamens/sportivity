@@ -41,11 +41,11 @@
         </div>
       <% elsif @activity.is_player?(current_user) %>
         <div class= "show-btn-action">
-          <%= link_to "Leave", activity_path(@activity), class: "btn-action"%>
+          <%= link_to "Leave", player_path(@player), method: :delete, remote: true,  class: "btn-action"%>
         </div>
       <% else %>
         <div class= "show-btn-action">
-          <%= link_to "Join", activities_path, class: "btn-action"%>
+          <%= link_to "Join", activity_players_path(@activity), method: :post, remote: true, class: "btn-action"%>
         </div>
       <% end %>
 
