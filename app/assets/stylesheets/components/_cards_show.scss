@@ -1,5 +1,5 @@
 .container-index {
-  background-color: #161d27;
+  background-color: $black;
   padding: 0 90px;
   height: 100vh;
 }
@@ -72,26 +72,25 @@
 .divider-vertical{
   width: 1px;
   height: 50px;
-  background-color: #161d27;
-
+  background-color: $black;
 }
 
 .show-btn-action {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   align-content: stretch;
-
+  padding: 6px;
 }
 
 .btn-action {
-  background-color: #f46b27;
+  background-color: $orange;
   color: #161d27;
   border-radius: 180px;
   padding: 8px 24px;
-  border: 0.2px solid #161d27;
+  border: 0.2px solid $black;
   font-weight: bold;
 }
 
@@ -100,9 +99,14 @@ a.btn-action {
   text-decoration: none;
 }
 
+.btn-action i {
+  font-size: 16px;
+  color: $black;
+}
+
 
 .arrow {
-  border: solid #f46b27;
+  border: solid $orange;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
@@ -111,4 +115,14 @@ a.btn-action {
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+}
+
+.show-header {
+  display:flex;
+  justify-content: space-between;
+
+  i {
+    font-size: 22px;
+    color: $black;
+  }
 }

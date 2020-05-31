@@ -12,7 +12,10 @@
     <div class="card-activity-show-infos">
 
       <div>
+        <div class="show-header">
         <h2 class='show-title'><%= @activity.title %></h2>
+        <%= link_to activity_path(@activity), method: :delete, data: {confirm: 'Are you sure?'} do %><i class="fas fa-trash"></i><% end %>
+        </div>
         <p class='show-paragraph' style= "width: max-content"><%= '🗓'  %> <%= @activity.start_time.strftime("%A, %B %-d, %H:%M -") %> <%= @activity.end_time.strftime("%H:%M")%> </p>
         <p class='show-paragraph' style= "width: max-content"><%= '📍' %><%= @activity.location %></p>
         <p class='show-paragraph'><%= @activity.description %></p>
@@ -35,9 +38,8 @@
 
       <% if @activity.is_owner?(current_user) %>
         <div class= "show-btn-action">
-          <%= link_to "Delete", activity_path(@activity), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn-action"%>
+          <%= link_to edit_activity_path(@activity), class: "btn-action" do %>Edit <i class="fas fa-edit"></i><% end %>
           <%= link_to "Invite", root_path, class: "btn-action"%>
-          <%= link_to "Edit",  edit_activity_path(@activity), class: "btn-action"%>
         </div>
       <% elsif @activity.is_player?(current_user) %>
         <div class= "show-btn-action">
@@ -52,4 +54,5 @@
     </div>
   </div>
 </div>
+
 
