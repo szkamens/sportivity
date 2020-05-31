@@ -1,8 +1,9 @@
 <% if @user == current_user %>
 <div class='container-banner'>
-  <%= image_tag "yoga.jpg", class: 'banner', width: 400 %>
+  <%= image_tag "yoga.jpg", class: 'banner'  %>
   <div>
     <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="container-banner avatar-x-large {" />
+    <div class='banner username'><%= @user.username.upcase %></div>
   </div>
 </div>
 <div class='container-user-show'>
@@ -20,7 +21,7 @@
     <% @user.sports.each  do |s| %>
       <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
       <% end %>
-          <%= link_to "+ / -", activities_path(@activities), class: "btn-sport-fav"%>
+          <%= link_to activities_path(@activities), class: "btn-sport-fav" do%>Edit &nbsp; <i class="fas fa-edit"></i><% end %>
     </div>
   </div>
   <div class='row'>
@@ -36,7 +37,7 @@
 
 <% else %>
 <div class='container-banner'>
-  <%= image_tag "yoga.jpg", class: 'banner', width: 400 %>
+  <%= image_tag "yoga.jpg", class: 'banner' %>
   <div>
     <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="container-banner avatar-x-large {" />
   </div>

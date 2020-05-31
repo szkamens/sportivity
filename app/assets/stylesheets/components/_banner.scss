@@ -3,10 +3,11 @@
   background-position: center;
   object-fit: cover;
   width: 100vw;
+  position: relative;
+  color: $white;
 }
 
 .container-banner {
-
   width: 100%;
   position: relative;
   margin-bottom: 100px;
@@ -17,4 +18,12 @@
   left: 120px;
   top: 176px;
   width: fit-content;
+}
+
+.container-banner .username{
+  position: absolute;
+  left: 86px;
+  top: 66px;
+  width: fit-content;
+  font-size: xxx-large;
 }
