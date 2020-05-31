@@ -13,20 +13,27 @@
 }
 
 .dashboard-first-2-boxes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  display: flex;
+  justify-content: space-evenly;
   margin-top: 30px;
+}
+
+.dashboard-first-2-boxes p {
+  margin-top: -20px;
 }
 
 .row-1-dashboard {
   border-color: #f46b27;
   border-style: solid;
-  border-radius: 7px;
+  border-radius: 40px;
   height: 80px;
   width: 80px;
   text-align: center;
   align-items: center;
+}
+
+.joined {
+
 }
 
 .favourite-sport-dashboard  {

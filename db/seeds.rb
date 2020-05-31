@@ -232,7 +232,7 @@ activities_to_do = [ariels_soccer_match, schneurs_tennis_match,
 
 puts "Creating Male Players(game joiners) & Users(game host) for the game.....SOCCER-INTERMIDATE"
 
-10.times do |i|
+5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
@@ -250,7 +250,7 @@ end
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game.....SOCCER-INTERMIDATE"
 
-10.times do |i|
+3.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
@@ -270,7 +270,7 @@ end
 # /////////////////////////////////// ITERATE JOINING GAME TENNIS-INTERMIDATE ///////////////////////////////////
 puts "Creating Male Players(game joiners) & Users(game host) for the game..... TENNIS-INTERMIDATE"
 
-10.times do |i|
+3.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
@@ -288,7 +288,7 @@ end
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game..... TENNIS-INTERMIDATE"
 
-10.times do |i|
+4.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
@@ -307,7 +307,7 @@ end
 # /////////////////////////////////// ITERATE JOINING GAME YOGA-PRO ///////////////////////////////////
 puts "Creating Male Players(game joiners) & Users(game host) for the game..... YOGA-PRO"
 
-10.times do |i|
+4.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
@@ -325,7 +325,7 @@ end
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game..... YOGA-PRO"
 
-10.times do |i|
+2.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
@@ -344,7 +344,7 @@ end
 # /////////////////////////////////// ITERATE JOINING GAME RUNNING-BEGGINER ///////////////////////////////////
 puts "Creating Male Players(game joiners) & Users(game host) for the game.....RUNNING-BEGGINER"
 
-10.times do |i|
+5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
@@ -366,7 +366,7 @@ end
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game.....RUNNING-BEGGINER"
 
-10.times do |i|
+5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
