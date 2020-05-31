@@ -8,7 +8,7 @@
           <%= image_tag "#{activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
           <div class="card-activity-index-infos border-bottom">
             <div>
-              <h2 class='mb-2'><%= activity.title %></h2>
+              <h2 class='mb-2'><%= activity.title.capitalize %></h2>
               <p class='mb-1'><%= activity.location %></p>
               <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
             </div>
@@ -23,11 +23,14 @@
               <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
               <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
             <div class='card-activity-index-ct'>
-              <span>+<%= activity.players.count - 3 %> </span>
+              <% if activity.players.count > 4  %>
+                <span>+<%= activity.player_limit - activity.players.count  %> </span>
+              <% else  %>
+              <% end %>
             </div>
             </div>
             <div class='card-activity-index-nd'>
-              <p><em><strong><%= activity.player_limit - activity.players.count%> players needed</strong></em></p>
+              <p><em><strong><%= pluralize(activity.player_limit - activity.players.count, 'player')%> needed </strong></em></p>
             </div>
           </div>
         </div>
