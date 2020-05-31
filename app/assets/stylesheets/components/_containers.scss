@@ -1,6 +1,25 @@
 .container-user-show {
-  margin-left: 63px;
+  display: flex;
+  flex-direction: column;
+  padding: 83px 52px;
+  margin-bottom: 10px;
 }
+
+.container-user-show .card-act-desc {
+  flex-direction: column;
+}
+
+.container-user-show .btn-sport-fav-flex {
+}
+
+.container-user-show .card-act-desc-joins {
+  padding-top: 38px;
+}
+
+.container-user-show p {
+  color: $orange;
+}
+
 @media screen and (max-width:720px) {
   .container-user-show {
     max-width: 600px;

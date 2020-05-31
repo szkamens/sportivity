@@ -11,7 +11,7 @@
       <% if @user.description.nil?  %>
       <p><em>Hey <%= @user.username.capitalize %>, Add a little something about yourself..</em></p>
       <% else %>
-      <p>" <%= @user.description %> "</p>
+      <p>" <em> <%= @user.description %> </em>"</p>
       <% end %>
     </div>
   </div>
@@ -24,9 +24,9 @@
     </div>
   </div>
   <div class='row'>
-    <div class='mt-3'>
-      <p>Sportivities Joined: <strong><%= @user.activities_joined.count %></strong> </p>
-      <p>Sportivities Created: <strong><%= @user.activities.count %></strong> </p>
+    <div class='card-act-desc-joins'>
+      <p>Sportivities Joined: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= @user.activities_joined.count %></strong> </p>
+      <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= @user.activities.count %></strong> </p>
     </div>
     <div>
   </div>
@@ -47,7 +47,7 @@
       <% if @user.description.nil?  %>
       <p><em><%= @user.username.capitalize %> loves sports, but doesn't love writing descriptions :) </em></p>
       <% else %>
-      <p>" <%= @user.description %> "</p>
+      <p>" <em><%= @user.description %> </em>"</p>
       <% end %>
     </div>
   </div>
@@ -59,9 +59,9 @@
     </div>
   </div>
   <div class='row'>
-    <div class='mt-3'>
-      <p>Sportivities Joined: <strong><%= @user.activities_joined.count %></strong> </p>
-      <p>Sportivities Created: <strong><%= @user.activities.count %></strong> </p>
+    <div class='card-act-desc-joins'>
+      <p>Sportivities Joined: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= @user.activities_joined.count %></strong> </p>
+      <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= @user.activities.count %></strong> </p>
     </div>
     <div>
   </div>
