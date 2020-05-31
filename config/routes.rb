@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :activities
   
   get 'users/me', to: 'users#me', as: :me
-  resources :users, only: :show
+  resources :users, only: %i[show]
 end
