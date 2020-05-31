@@ -1,26 +1,70 @@
 <% if @user == current_user %>
-  <div class='container-banner'>
-    <%= image_tag "yoga.jpg", class: 'banner' %>
-    <div>
-      <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="container-banner avatar-x-large" />
+<div class='container-banner'>
+  <%= image_tag "yoga.jpg", class: 'banner', width: 400 %>
+  <div>
+    <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="container-banner avatar-x-large {" />
+  </div>
+</div>
+<div class='container-user-show'>
+  <div class='row'>
+    <div class='card-act-desc'>
+      <% if @user.description.nil?  %>
+      <p><em>Hey <%= @user.username.capitalize %>, Add a little something about yourself..</em></p>
+      <% else %>
+      <p>" <%= @user.description %> "</p>
+      <% end %>
     </div>
   </div>
-
-  <div class='card-act-created'>
-    <p>Activites created: <strong><%= @user.activities.count %></strong> </p>
-  </div>
-
-  <div class='btn-sport-fav-flex'>
+  <div class='row'>
+    <div class='btn-sport-fav-flex' >
     <% @user.sports.each  do |s| %>
       <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
-    <% end %>
-    <%= link_to "+ / -", root_path, class: "btn-sport-fav"%>
+      <% end %>
+          <%= link_to "+ / -", activities_path(@activities), class: "btn-sport-fav"%>
+    </div>
   </div>
+  <div class='row'>
+    <div class='mt-3'>
+      <p>Sportivities Joined: <strong><%= @user.activities_joined.count %></strong> </p>
+      <p>Sportivities Created: <strong><%= @user.activities.count %></strong> </p>
+    </div>
+    <div>
+  </div>
+</div>
 
-  <div class='card-act-desc'>
-    <p>" <%= @user.description %> "</p>
-  </div>
+<!-- ↓ NOT CURRENT USER PAGE ↓ -->
+
 <% else %>
-  <p>This is NOT your page</p>
+<div class='container-banner'>
+  <%= image_tag "yoga.jpg", class: 'banner', width: 400 %>
+  <div>
+    <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="container-banner avatar-x-large {" />
+  </div>
+</div>
+<div class='container-user-show'>
+  <div class='row'>
+    <div class='card-act-desc'>
+      <% if @user.description.nil?  %>
+      <p><em><%= @user.username.capitalize %> loves sports, but doesn't love writing descriptions :) </em></p>
+      <% else %>
+      <p>" <%= @user.description %> "</p>
+      <% end %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='btn-sport-fav-flex' >
+    <% @user.sports.each  do |s| %>
+      <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
+      <% end %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='mt-3'>
+      <p>Sportivities Joined: <strong><%= @user.activities_joined.count %></strong> </p>
+      <p>Sportivities Created: <strong><%= @user.activities.count %></strong> </p>
+    </div>
+    <div>
+  </div>
+</div>
 <% end %>
 

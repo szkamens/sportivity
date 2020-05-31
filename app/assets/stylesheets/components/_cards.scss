@@ -4,7 +4,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 28px;
-  border: 1px solid #f46b27;
+  border: 1px solid $orange;
 }
 
 .card-activity-index > img, .card-activity-index img.card-activity-image  {
@@ -14,7 +14,7 @@
 }
 
 .card-activity-index a {
-  color: #0E0000;
+  color: $black;
 }
 
 .card-activity-index h2 {
@@ -92,11 +92,11 @@
 }
 
 .container-index {
-  background-color: #161d27;
+  background-color: $black;
   padding: 0 90px;
 }
 .container-index h1 {
-  color: #f46b27;
+  color: $orange;
 }
 
 // ------ USER-SHOW-PAGE ------
@@ -110,10 +110,30 @@
 font-size: x-large;
 }
 .card-act-desc {
-  margin-left: 4px;
-  margin: 40px;
-  margin-top: 36px;
 }
 .card-act-desc p{
 font-size: large;
+}
+
+/*Media Queries*/
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

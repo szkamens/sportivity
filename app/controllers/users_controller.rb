@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[show]
+
   def show
-    @user = User.find(params[:id])
   end
 
   def me 
     @user = current_user
     render :show
+  end
+  
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
