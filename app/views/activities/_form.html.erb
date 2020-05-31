@@ -12,7 +12,9 @@
       <input type="range" name="activity[player_limit]" id="playerInputId" value="10" min="1" max="20" oninput="playerOutputId.value = playerInputId.value">
       <output name="playerOutputName" id="playerOutputId">10</output>
     </div>
-    <%= f.submit %>
+    <div class="form-group">
+      <input class="btn btn-primary" type="submit" value="Create Acitivty" name="commit">
+  </div>
   <% end %>
  <%= javascript_pack_tag 'init_auto_complete' %>
   <%= javascript_pack_tag 'flatpickr' %>
