@@ -14,9 +14,9 @@
   <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
   <% end %>
       <%= link_to "+ / -", root_path, class: "btn-sport-fav"%>
-</div> 
+</div>
 <div class='card-act-desc'>
-<p>" <%= User.find(158).description %> "</p>
+<p>" <%= @user.description %> "</p>
 </div>
 <div>
 <% else %>
