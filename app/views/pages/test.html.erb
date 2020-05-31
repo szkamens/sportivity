@@ -1,0 +1,99 @@
+<div class="container-dashboard mb-10 p-3">
+  <h1 class="title-dashboard text-center"> Dashboard </h1>
+
+  <div class="welcome-dashboard text-center"><p><strong> Welcome <%= current_user.username.capitalize %>  </strong></p></div>
+  <div class="welcome-message-dashboard text-center"><p><strong> Messages:</strong></p></div>
+  <div class="actions-icon-dashboard">
+    <a href="#"><i class="fas fa-comments"></i></a>
+  </div>
+
+  <div class="info-dashboard text-center"><p><strong> Your info about the activities:  </strong></p></div>
+
+  <div class="dashboard-first-2-boxes">
+    <div class="row-1-dashboard"><p><strong>Joined</strong><div><%= current_user.activities_joined.length %></div></p></div>
+    <div class="row-1-dashboard"><p><strong>Created</strong><div><%= current_user.activities.length %></div></p></div>
+  </div>
+
+  <div class="favourite-sport-dashboard text-center"><p><strong> Your next activity info:</strong></p></div>
+  <div class="dashboard-next-activity-info">
+   <% current_user.activities_joined.each do |activity| %>
+   <div><strong>Match name:</strong>  <%= activity.title.capitalize %>.</div>
+   <% if activity.sport.name == "Football" %>
+   <a href="<%= activity_path(activity) %>"><i class="fas fa-futbol"></i></a>
+   <% elsif activity.sport.name == "Basketball" %>
+   <a href="<%= activity_path(activity) %>"><i class="fas fa-basketball-ball"></i></a>
+   <% elsif activity.sport.name == "Tennis" %>
+   <a href="<%= activity_path(activity) %>"><i class="fas fa-tennis-ball"></i></a>
+   <% elsif activity.sport.name == "Running" %>
+   <a href="<%= activity_path(activity) %>"><i class="fas fa-running"></i></a>
+   <% elsif activity.sport.name == "Yoga" %>
+   <a href="<%= activity_path(activity) %>"><i class="fas fa-heartbeat"></i></a>
+   <% elsif activity.sport.name == "Volleyball" %>
+   <a href="<%= activity_path(activity) %>"><i class="fas fa-volleyball-ball"></i></a>
+   <% end %>
+   <% end %>
+ </div>
+</div>
+
+
+.welcome-message-dashboard {
+  margin-top: 30px;
+}
+
+
+.info-dashboard {
+  margin-top: 30px;
+}
+
+.dashboard-first-2-boxes {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.dashboard-first-2-boxes p {
+  margin-top: -20px;
+}
+
+.row-1-dashboard {
+  border-color: #f46b27;
+  border-style: solid;
+  border-radius: 40px;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  align-items: center;
+}
+
+.joined {
+
+}
+
+.favourite-sport-dashboard  {
+  margin-top: 30px;
+}
+
+.dashboard-next-activity-info {
+  justify-items: center;
+  text-align: center;
+  border-color: #f46b27;
+  border-style: solid;
+  border-radius: 7px;
+  border: auto;
+  margin-top: 30px;
+}
+
+.actions-icon-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fas {
+ font-size: 40px;
+ color: #F46B27;
+}
+
+.fas:hover {
+  opacity: 0.5;
+}

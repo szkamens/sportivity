@@ -2,10 +2,12 @@
   background-size: cover;
   background-position: center;
   object-fit: cover;
+  width: 100vw;
 }
 
 .container-banner {
-  width: 10vw;
+
+  width: 100%;
   position: relative;
   margin-bottom: 100px;
 }

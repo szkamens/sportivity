@@ -1,17 +1,15 @@
 html, body {
+
   height: 100vh;
   background-color: #161d27;
-  margin: 0;
 }
 
-.page-wrapper {
-  min-height: 100%;
-  margin-bottom: -60px;
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 .page-content {
   height: 100vh;
   min-height: 100%;
-  margin: 0 auto;
-  margin-bottom: 10px;
 }
