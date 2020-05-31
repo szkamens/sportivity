@@ -1,4 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage-container">
+  <div class="homepage-title-logo-container">
+    <img class="homepage-logo" src="https://res.cloudinary.com/df0e4j6rq/image/upload/v1590911210/sportivity/sportivity_frontcover_zdaf11.png" alt="">
+    <div class="homepage-sportivity-title-container"><h1 class="homepage-sportivity-title">sportivity</h1></div>
+  </div>
+  <div class="homepage-subtitle-container"><h2 class="homepage-subtitle"> Play sports.</h2></div>
+  <div class="homepage-text-container"><p class="homepage-text"> Find, search and play sports with 1000's of others nearby.</p></div>
 
+  <div class="homepage-buttons-container">
+    <div class="btn-homepage">
+      <%= link_to "Log in", new_user_session_path, class: "card-activity-index-btn btn btn-sport"  %>
+    </div>
+    <div class="btn-homepage">
+      <%= link_to "Sign up", user_session_path, class: "card-activity-index-btn btn btn-sport" %>
+    </div>
+  </div>
 
+</div>

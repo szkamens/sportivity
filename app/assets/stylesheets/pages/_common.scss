@@ -1,5 +1,6 @@
 html, body {
-  height: 100%;
+  height: 100vh;
+  background-color: #161d27;
   margin: 0;
 }
 
@@ -9,6 +10,7 @@ html, body {
 }
 
 .page-content {
+  height: 100vh;
   min-height: 100%;
   margin: 0 auto;
   margin-bottom: 10px;
