@@ -2,7 +2,7 @@
 
   <div class="card-activity-show border-bottom">
     <p class="back-arrow">
-      <%= link_to activities_path do %>
+      <%= link_to :back do %>
       <i class="arrow left"></i>
       <% end %>
     </p>
@@ -13,14 +13,18 @@
 
       <div>
         <div class="show-header">
+        <% if @activity.is_owner?(current_user) %>
         <h2 class='show-title'><%= @activity.title %></h2>
         <%= link_to activity_path(@activity), method: :delete, data: {confirm: 'Are you sure?'} do %><i class="fas fa-trash"></i><% end %>
+        <% else %>
+        <h2 class='show-title'><%= @activity.title %></h2>
+        <% end %>
         </div>
         <p class='show-paragraph' style= "width: max-content"><%= '🗓'  %> <%= @activity.start_time.strftime("%A, %B %-d, %H:%M -") %> <%= @activity.end_time.strftime("%H:%M")%> </p>
         <p class='show-paragraph' style= "width: max-content"><%= '📍' %><%= @activity.location %></p>
         <p class='show-paragraph'><%= @activity.description %></p>
       </div>
-      <a class="card-activity-show-btn btn btn-sport" href="#"><%= @activity.sport.name %></a>
+      <a class="card-activity-show-btn btn" href="#"><%= @activity.sport.name %></a>
 
       <div class="card-activity-show-frame">
         <div class="card-activity-show-players">
