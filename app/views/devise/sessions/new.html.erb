@@ -1,4 +1,5 @@
 <div class="login-page-wrapper col-sm">
+  <div class="login-logo-container"><img class="login-page-logo" href="<%= root_path %>" src="https://res.cloudinary.com/df0e4j6rq/image/upload/v1590911210/sportivity/sportivity_frontcover_zdaf11.png" alt=""></div>
   <h2>Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -14,7 +15,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "card-activity-index-btn btn btn-sport" %>
+      <%= f.button :submit, "Log in", class: "card-activity-index-btn btn btn-sign-page" %>
     </div>
   <% end %>
   <%= render "devise/shared/links" %>

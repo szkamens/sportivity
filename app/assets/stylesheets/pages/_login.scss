@@ -5,13 +5,21 @@
 .login-page-wrapper {
   color: white;
   background-color: #161d27;
+  padding-top: 90px;
 }
 
 .form-actions {
   display: flex;
   justify-content: center;
-
 }
 
-.card-activity-index-btn {
+.login-logo-container{
+  position:fixed;
+  top:10px;
+  left:10px;
+}
+
+.login-page-logo {
+  height: 70px;
+  width: 70px;
 }
