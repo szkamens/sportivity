@@ -6,7 +6,6 @@
   background: $black;
   border: 1px solid $orange;
 }
-
 .btn-sport-fav-flex {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +13,6 @@
   justify-content: center;
   height: 100%;
 }
-
 .btn-sport-fav {
   color: white;
   font-size: x-small;
@@ -30,8 +28,8 @@
   font-size: x-medium;
   padding: 8px 24px;
   border-radius: 180px;
-  background: #161d27;
-  border: 1px solid #f46b27;
+  background: $black;
+  border: 1px solid $orange;
   margin: 8px;
 }
 
