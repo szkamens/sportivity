@@ -1,10 +1,9 @@
-
 .card-activity-index {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 28px;
-  border: 1px solid #f46b27;
+  border: 1px solid $orange;
 }
 
 .card-activity-index > img, .card-activity-index img.card-activity-image  {
@@ -84,6 +83,8 @@
   margin-left: 4px;
 }
 
+///////////card 
+
 .card-activity-index-players .card-activity-index-nd {
   align-self: center;
   margin-left: 4px;
@@ -96,7 +97,7 @@
   padding: 0 90px;
 }
 .container-index h1 {
-  color: #f46b27;
+  color: $orange;
 }
 
 // ------ USER-SHOW-PAGE ------
