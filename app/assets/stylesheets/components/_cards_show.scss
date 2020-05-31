@@ -1,28 +1,29 @@
 .container-index {
   background-color: $black;
   padding: 0 90px;
-  height: 100%;
+  height: 100vh;
 }
 
 .card-activity-show {
   background: white;
-  height: 35rem;
+  height: 100vh;
 }
 
 .card-activity-show > img {
-  height: 250px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-activity-show h2 {
-  font-size: 22px;
+  font-size: 26px;
   margin-bottom: 15px;
   font-weight: bold;
 }
 
 .card-activity-show p {
-  font-size: 12px;
+  font-size: 16px;
+  margin-top: 8px;
 }
 
 //.card-activity-show  {
@@ -55,6 +56,8 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .card-activity-show-frame {
@@ -66,7 +69,7 @@
 }
 
 .show-paragraph p{
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .divider-vertical{
@@ -87,7 +90,7 @@
 
 .btn-action {
   background-color: $orange;
-  color: #161d27;
+  color: $black;
   border-radius: 180px;
   padding: 8px 24px;
   border: 0.2px solid $black;
@@ -106,10 +109,12 @@ a.btn-action {
 
 
 .arrow {
+  height: 10px;
   border: solid $orange;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
+
 }
 
 .left {
@@ -120,9 +125,21 @@ a.btn-action {
 .show-header {
   display:flex;
   justify-content: space-between;
+  margin-top: 8px;
 
   i {
-    font-size: 22px;
+    font-size: 26px;
     color: $black;
   }
 }
+
+.card-activity-show-btn {
+  background-color: $black;
+  color: white;
+  border-radius: 180px;
+  padding: 8px 24px;
+  border: 1px solid $orange;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
