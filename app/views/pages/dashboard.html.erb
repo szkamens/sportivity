@@ -1,22 +1,20 @@
 <div class="container-dash">
+  <br>
   <div class="current-games">
     <div class="joined">
-      <div class="btn-dashboard">Joined</div>
+      <%= link_to "Joined", dashboard_path(query:"joined"), class:"btn-dashboard" %>
     </div>
     <div class="created">
-      <div class="btn-dashboard">Created</div>
+      <%= link_to "Created", dashboard_path(query:"created"), class:"btn-dashboard" %>
     </div>
     <div class="past">
-      <div class="btn-dashboard">Past</div>
+      <%= link_to "Past", dashboard_path(query:"past"), class:"btn-dashboard" %>
     </div>
   </div>
   <div class="activities-cards">
     <% @activities.each do |activity| %>
-      <div class="activity-dash">
-        <h2 class='mb-2'><%= activity.title %></h2>
-        <p class='mb-1'><%= activity.location %></p>
-        <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
-      </div>
+      <%= render 'activity_card', activity: activity %>
+      <p></p>
     <% end %>
   </div>
 </div>

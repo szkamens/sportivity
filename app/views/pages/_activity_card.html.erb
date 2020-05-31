@@ -1,0 +1,17 @@
+<%= link_to(activity_path(activity)) do %>
+  <div class="activity-dash">
+    <div class="card-activity-dash">
+      <div class="card-activity-dash-infos">
+        <div class="left-side">
+          <h2 class='mb-2'><%= activity.title %></h2>
+          <p class='mb-1'>📍 <%= activity.location %></p>
+          <p class='mb-1'>📅 <%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
+        </div>
+        <div class="right-side">
+          <%= link_to activity.sport.name, activity_path(activity), class: "card-activity-dash-btn btn btn-sport" %>
+          <%= link_to "💬", root_path, class: 'chat-dash' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,6 +1,12 @@
 .container-dash {
   background-color: #161d27;
   color: white;
+  height: 100%;
+}
+
+.activities-cards {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .current-games {
@@ -17,13 +23,57 @@
   border: 1px solid #f46b27;
  }
 
-.card-dash {
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  background: #FFFFFF;
-  border: 0.5px solid #F46B27;
-  box-sizing: border-box;
-  border-radius: 20px;
+.card-activity-dash {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 28px;
+  border: 1px solid #f46b27;
+  color: #0E0000;
+}
+
+.card-activity-dash a {
+  color: #0E0000;
+}
+
+.card-activity-dash h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-activity-dash p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.card-activity-dash-infos {
+  padding: 16px;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+  margin-bottom: -14px;
+  display: flex;
+
+  .left-side {
+    flex-grow: 1;
+  }
+
+  .right-side {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.current-games {
+  margin-bottom: 20px;
+}
+
+a.chat-dash {
+  font-size: 30px;
+  text-decoration: none;
 }
