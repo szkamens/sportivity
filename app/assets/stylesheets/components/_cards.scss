@@ -1,6 +1,6 @@
 .card-activity-index {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 28px;
   border: 1px solid $orange;
@@ -34,16 +34,16 @@
   align-items: flex-end;
   position: relative;
   margin-bottom: -14px;
+  text-decoration: none;
 }
 
 .card-activity-index-infos .card-activity-index-btn{
   position: absolute;
   left: 16px;
-  top: -41px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  top: -36px;
   width: fit-content;
-  font-size: x-small;
+  font-size: 11px;
+  text-decoration: none;
 }
 
 .card-activity-index .card-activity-index-players {
