@@ -4,7 +4,7 @@
     <% @activities.each do |activity| %>
     <% unless activity.players.count == activity.player_limit %>
       <%= link_to(activity_path(activity)) do %>
-        <div class="card-activity-index"> 
+        <div class="card-activity-index">
           <%= image_tag "#{activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
           <div class="card-activity-index-infos border-bottom">
             <div>
@@ -36,17 +36,6 @@
         </div>
       <% end %>
       <p></p>
-  
-  <%# begin comment %>
-      <!--<%# <p><strong>Host: </strong><%= activity.user.username %></p>-->
-      <%# <p><strong>Players: </strong> %>
-      <%# <% if activity.players.count > 4 %>
-        <%# <%= activity.users.take(3).map { |u| u.username }.join(', ') %> 
-        <%# +<%= activity.players.count - 3 %>  
-        <%# <% else %>  
-        <%# <%= activity.users.take(3).map { |u| u.username }.join(', ') %> 
-      <%# <% end %> 
-      <%# </p> %>
     <% end %>
     <% end %>
   </div>
