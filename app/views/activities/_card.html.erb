@@ -8,7 +8,7 @@
           <p class='mb-1'><%= activity.location %></p>
           <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
         </div>
-        <%= link_to activity.sport.name, class: "card-activity-index-btn btn btn-sport" %>
+        <a class="card-activity-index-btn btn btn-sport" href="#"><%= activity.sport.name %></a>
       </div>
       <div class="card-activity-index-players">
         <div class="mr-8 card-activity-index-host">
