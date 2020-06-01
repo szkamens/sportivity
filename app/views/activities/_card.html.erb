@@ -1,0 +1,34 @@
+<% unless activity.players.count == activity.player_limit %>
+  <%= link_to(activity_path(activity)) do %>
+    <div class="card-activity-index">
+      <%= image_tag "#{activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
+      <div class="card-activity-index-infos border-bottom">
+        <div>
+          <h2 class='mb-2'><%= activity.title.capitalize %></h2>
+          <p class='mb-1'><%= activity.location %></p>
+          <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
+        </div>
+        <%= link_to activity.sport.name, class: "card-activity-index-btn btn btn-sport" %>
+      </div>
+      <div class="card-activity-index-players">
+        <div class="mr-8 card-activity-index-host">
+          <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
+        </div>
+        <div class="card-activity-index-player">
+          <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
+          <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
+          <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
+          <div class='card-activity-index-ct'>
+            <% if activity.players.count > 4  %>
+              <span>+<%= activity.players.count - 4 %> </span>
+            <% end %>
+          </div>
+        </div>
+        <div class='card-activity-index-nd'>
+          <p><em><strong><%= pluralize(activity.player_limit - activity.players.count, 'player')%> needed </strong></em></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <p></p>
+<% end %>
