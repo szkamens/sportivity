@@ -1,6 +1,6 @@
 .container-dash {
-  background-color: #161d27;
-  color: white;
+  background-color: $black;
+  color: $white;
   height: 100%;
 }
 
@@ -15,20 +15,20 @@
 }
 
 .btn-dashboard {
-  color: white !important;
+  color: $white !important;
   font-size: x-medium;
   padding: 8px 24px;
   border-radius: 180px;
-  background: #161d27;
-  border: 1px solid #f46b27;
+  background: $black;
+  border: 1px solid $orange;
  }
 
 .card-activity-dash {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 28px;
-  border: 1px solid #f46b27;
+  border: 1px solid $orange;
   color: #0E0000;
 }
 
