@@ -39,8 +39,11 @@
 .card-activity-index-infos .card-activity-index-btn{
   position: absolute;
   left: 16px;
-  top: -48px;
+  top: -41px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  font-size: x-small;
 }
 
 .card-activity-index .card-activity-index-players {
@@ -83,7 +86,7 @@
   margin-left: 4px;
 }
 
-///////////card 
+///////////card
 
 .card-activity-index-players .card-activity-index-nd {
   align-self: center;
