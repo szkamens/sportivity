@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  def me 
+  def me
     @user = current_user
     render :show
   end

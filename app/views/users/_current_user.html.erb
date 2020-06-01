@@ -1,0 +1,34 @@
+<div class='container-banner'>
+  <%= image_tag "yoga.jpg", class: 'banner'  %>
+  <div>
+    <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="container-banner avatar-x-large" />
+    <div class='banner username'><%= user.username.upcase %></div>
+  </div>
+</div>
+<div class='container-user-show'>
+  <div class='row'>
+    <div class='card-act-desc'>
+      <% if user.description.nil?  %>
+      <p><em>Hey <%= user.username.capitalize %>, Add a little something about yourself..</em></p>
+      <% else %>
+      <p>" <em> <%= user.description %> </em>"</p>
+      <% end %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='btn-sport-fav-flex' >
+      <% user.sports.each  do |s| %>
+        <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
+      <% end %>
+      <%= link_to activities_path, class: "btn-sport-fav" do %>
+        Edit &nbsp; <i class="fas fa-edit"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='card-act-desc-joins'>
+      <p>Sportivities Joined: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= user.activities_joined.count %></strong> </p>
+      <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= user.activities.count %></strong> </p>
+    </div>
+  </div>
+</div>
