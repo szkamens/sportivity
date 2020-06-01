@@ -5,4 +5,21 @@
 .user-register-page-wrapper {
   color: $white;
   background-color: $black;
+  padding-top: 10px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-logo-container {
+  position: sticky;
+}
+
+.signup-page-logo {
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
 }

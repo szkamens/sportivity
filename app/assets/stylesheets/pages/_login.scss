@@ -5,7 +5,7 @@
 .login-page-wrapper {
   color: $white;
   background-color: $black;
-  padding-top: 90px;
+  padding-top: 10px;
 }
 
 .form-actions {
@@ -13,13 +13,13 @@
   justify-content: center;
 }
 
-.login-logo-container{
-  position:fixed;
-  top:10px;
-  left:10px;
+.login-logo-container {
+  position: sticky;
 }
 
 .login-page-logo {
   height: 70px;
   width: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
