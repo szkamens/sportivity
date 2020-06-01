@@ -13,7 +13,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.sport = []
+    if params[:user][:sport_ids].size >= 2
+      @user.sport_users.each {|su| su.destroy! } 
+      params[:user][:sport_ids].each { |spo_id| SportUser.create(user: @user, sport: Sport.find(spo_id), skill_level: 'Intermediate') if spo_id != ""}
+    end
     @user.update(user_params)
     redirect_to me_path(@user)
   end
@@ -25,6 +28,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:description, :skill_level, :sport_id)
+    params.require(:user).permit(:description, :skill_level)
   end
 end

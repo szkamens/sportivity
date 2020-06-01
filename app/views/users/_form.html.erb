@@ -1,10 +1,10 @@
-<%= simple_form_for(@user) do |f| %>
-    <%= f.simple_fields_for :sports_users do |ff|
-        <%= ff.input :name %>
-    <% end %>
-    <div>
-       <input class="btn btn-primary" type="submit" value="Create Acitivty" name="commit">
-    </div>
+<%= simple_form_for @user do |f| %>
+  <%= f.association :sports %>
+
+  <%= f.input :description %>
+  <div class="form-group d-flex justify-content-end">
+    <input class="btn btn-primary" type="submit" value="Save" name="commit">
+  </div>
 <% end %>
 <%= javascript_pack_tag 'init_auto_complete' %>
 <%= javascript_pack_tag 'flatpickr' %>
