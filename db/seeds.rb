@@ -32,14 +32,28 @@ end
 # Descriptions for the "User" table.
 descriptions = []
 
-descriptions << "Doing sports with me it will be a great oportunity to level up your skills!"
+descriptions << "Level up your skills and practice some sports with me!"
 descriptions << "Sport lover!"
-descriptions << "I just moved to Tel Aviv and wanna practice sports with other people"
+descriptions << "I just moved to town and wanna practice sports with other people"
 descriptions << "Looking for another people to play around my area!"
-descriptions << "I consider myself a good partner to do sports!"
-descriptions << "I pay the coke dont matter the result!"
-descriptions << "Wondering playing with people of my same skill level!"
-descriptions << "I use to play this sport when I was child!"
+descriptions << "Be aware -- I consider myself a challenging partner to do sports LOL!"
+descriptions << "Don't hate tha playa hate tha game (that's what I always say)!"
+descriptions << "Looking to play with people at my same skill level!"
+descriptions << "Love the great outdoors and especially sporting it!"
+descriptions << "For me, hitting the cement is the best feeling!"
+descriptions << "Hustle bustle sporty bustle - that's me haha!"
+descriptions << "Been practicing since I was kid, could always use more practice!"
+descriptions << "Coach is my best friend :) "
+descriptions << "Nothing like the sound of swish IMO LOL"
+descriptions << "Over here to find a regular buddy to sport with."
+descriptions << "Always looking for a sport time!"
+descriptions << "Never come home when the bell rings"
+descriptions << "Momma be callin' askin where I'm at. Always on the court!"
+descriptions << "8 on 8 anytime of day"
+descriptions << "Rain or shine, I'm on the line!"
+descriptions << "LMK if you know someone who enjoys a run"
+descriptions << "My favorite shape is ball ;) "
+descriptions << "Got Game?"
 
 ############################# Destroy database #############################
 ## Cleaning Database
@@ -74,12 +88,12 @@ puts 'Sports Created!'
 
 
 # ///// ARRAY OF LOCATIONS ////
-locations = ["Arlozorov 100, Tel Aviv", "Balfour 200, Tel Aviv", "Begin 350, Tel Aviv",
-            "Ben Gurion 380, Tel Aviv", "Bialik 180, Tel Aviv", "Dizengoff 100, Tel Aviv",
-            "Herzl 400, Tel Aviv", "Rabin 580, Tel Aviv", "Ibn Gabirol 200, Tel Aviv",
-            "Ibn Gabirol 250, Tel Aviv", "Ibn Gabirol 50, Tel Aviv", "Ibn Gabirol 70, Tel Aviv",
-            "Dizengoff 130, Tel Aviv", "Dizengoff 500, Tel Aviv", "Dizengoff 120, Tel Aviv",
-            "Balfour 230, Tel Aviv", "Balfour 100, Tel Aviv", "Balfour 240, Tel Aviv"]
+locations = ["Arlozorov 100, Tel Aviv", "Balfour 200, Herziliya", "Begin 350, Jerusalem",
+            "Ben Gurion 380, Rishon", "Bialik 180, Rechovot", "Dizengoff 100, Haifa",
+            "Herzl 400, Eilat", "Rabin 580, Ashdod", "Ibn Gabirol 200, Kfar Saba",
+            "Ibn Gabirol 250, Tzfat", "Ibn Gabirol 50, Tiveria", "Ibn Gabirol 70, Netanya",
+            "Dizengoff 130, Ashkelon", "Dizengoff 500, Bat Yam", "Dizengoff 120, Naharia",
+            "Balfour 230, Mitzpe Ramon", "Balfour 100, Efrat", "Balfour 240, Beer Sheva"]
 
 
 
@@ -386,6 +400,6 @@ puts "Creating Female Players(game joiners) & Users(game host) for the game.....
   puts "Player #{user.username} created"
 end
 
-# Create an array of images 40
+# Create an array of images 40 -- has_one_attached :photo
 # Loop into the photos for each user not repeating (each user with his own pict)
-# Each user for the demo should have his own background pict
+# Each user for the demo should have his own background pict -- has_one_attached :background_photo
