@@ -12,12 +12,21 @@
       </div>
       <div class="card-activity-index-players">
         <div class="mr-8 card-activity-index-host">
-          <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
+        <% if activity.user.photo.attached? %>
+          <%= cl_image_tag(activity.user.photo.key, crop: :fill, class: "avatar-large") %>
+        <% else %>
+          <%= image_tag "default_avatar.png", crop: :fill, class:"avatar-large" %>
+        <% end %>
         </div>
         <div class="card-activity-index-player">
-          <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
-          <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
-          <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
+
+        <% if activity.players.count > 4 %>
+          <%= activity.users.take(3).map { |u| u.username }.join(', ') %>
+          +<%= activity.players.count - 3 %>  
+        <% else %>  
+          <%= activity.users.take(3).map { |u| u.username }.join(', ') %>
+        <% end %>
+
           <div class='card-activity-index-ct'>
             <% if activity.players.count > 4  %>
               <span>+<%= activity.players.count - 4 %> </span>
