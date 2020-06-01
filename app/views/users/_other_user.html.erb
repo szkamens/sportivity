@@ -2,13 +2,20 @@
   <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
   <div>
     <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large") %>
+    <div class='banner username'><%= user.username.upcase %></div>
   </div>
 </div>
 <div class='container-user-show'>
   <div class='row'>
     <div class='card-act-desc'>
-      <% if user.description.nil?  %>
-      <p><em><%= user.username.capitalize %> loves sports, but doesn't love writing descriptions :) </em></p>
+      <% if user.description.nil? || user.description == ""  %>
+      <p><em><%= @user.username.capitalize %> loves sports, but doesn't love talking about 
+        <% if @user.gender == 'Male' %> 
+          himself
+          <% else %> 
+          herself
+          <% end %>
+           :)</em></p>
       <% else %>
       <p>" <em><%= user.description %> </em>"</p>
       <% end %>

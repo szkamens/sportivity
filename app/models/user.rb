@@ -13,7 +13,6 @@ class User < ApplicationRecord
   has_many :sport_users
   has_many :sports, through: :sport_users
 
-
   validates :username, presence: true, uniqueness: true, length: { minimum: 3}
   validates :gender, presence: true, inclusion: { in: %w[Male Female] }
 

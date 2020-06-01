@@ -10,11 +10,12 @@
 <div class='container-user-show'>
   <div class='row'>
     <div class='card-act-desc'>
-      <% if user.description.nil?  %>
+      <% if user.description.nil? || user.description == "" %>
       <p><em>Hey <%= user.username.capitalize %>, Add a little something about yourself..</em></p>
       <% else %>
       <p>" <em> <%= user.description %> </em>"</p>
       <% end %>
+      <%= link_to edit_user_path(@user), class: "btn-sport-fav" do%><i class="fas fa-edit"></i><% end %>
     </div>
   </div>
   <div class='row'>
@@ -22,7 +23,7 @@
       <% user.sports.each  do |s| %>
         <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
       <% end %>
-      <%= link_to activities_path, class: "btn-sport-fav" do %>
+      <%= link_to edit_user_path(@user), class: "btn-sport-fav" do %>
         Edit &nbsp; <i class="fas fa-edit"></i>
       <% end %>
     </div>
