@@ -1,7 +1,7 @@
 <div class='container-banner'>
-  <%= image_tag "yoga.jpg", class: 'banner' %>
+  <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
   <div>
-    <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="container-banner avatar-x-large {" />
+    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large") %>
   </div>
 </div>
 <div class='container-user-show'>
