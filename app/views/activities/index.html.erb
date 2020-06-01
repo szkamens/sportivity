@@ -1,5 +1,17 @@
 <div class='container-index p-3 '>
   <h1>Activities</h1>
+
+  <!-- SEARCH BAR -->
+  <%= form_tag activities_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: 'form-control',
+      placeholder: '🔍Search by sport or location..'
+    %>
+    <%= submit_tag "Search", class: "btn btn-action" %>
+  <% end  %>
+  <!-- / SEARCH BAR -->
+
   <div>
     <% @activities.each do |activity| %>
     <% unless activity.players.count == activity.player_limit %>
