@@ -26,6 +26,7 @@ class ActivitiesController < ApplicationController
     @activity.user = current_user
     if @activity.save!
       @activity.add_player(current_user, true)
+      @activity.add_chatroom
       redirect_to activity_path(@activity)
     else
       render :new

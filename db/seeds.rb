@@ -385,3 +385,6 @@ puts "Creating Female Players(game joiners) & Users(game host) for the game.....
 
   puts "Player #{user.username} created"
 end
+
+puts "Connecting Chatrooms"
+Chatroom.connect_all_chatrooms

@@ -18,4 +18,8 @@ class User < ApplicationRecord
   def activities_joined
     Player.where(user: self).map{ |player| player.activity }
   end
+
+  def my_activity_chatrooms
+    self.activities_joined.map { |activity| activity.my_chatroom }
+  end
 end
