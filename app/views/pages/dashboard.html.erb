@@ -11,10 +11,5 @@
       <%= link_to "Past", dashboard_path(query:"past"), class:"btn-dashboard" %>
     </div>
   </div>
-  <div class="activities-cards">
-    <% @activities.each do |activity| %>
-      <%= render 'activity_card', activity: activity %>
-      <p></p>
-    <% end %>
-  </div>
+  <%= render "dashboard_activities", activities: @activities %>
 </div>

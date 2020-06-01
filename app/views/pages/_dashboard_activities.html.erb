@@ -1,0 +1,23 @@
+<% if activities.any? %>
+  <div class="activities-cards">
+    <% activities.each do |activity| %>
+      <%= render 'activity_card', activity: activity %>
+      <p></p>
+    <% end %>
+  </div>
+
+<% elsif params.include?(:query) %>
+ <div class="dashbaord-cards">
+  <% if params[:query] == 'joined' %>
+    <h3>You have not joined any activities yet</h3>
+  <% elsif params[:query] == 'created' %>
+    <h3>You have not created any activities yet</h3>
+  <% elsif params[:query] == 'past' %>
+    <h3>You have no past activities</h3>
+  <% else %>
+    <h3>You have no activities</h3>
+  <% end %>
+  <% else %> <%# no activities, but no query given %>
+  <h3>You have no activities</h3>
+<% end %>
+</div>
