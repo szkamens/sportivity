@@ -17,7 +17,11 @@
   </div>
   <%= f.input :description, required: true %>
   <div class="form-group d-flex justify-content-end">
-    <input class="btn btn-primary" type="submit" value="Create Acitivty" name="commit">
+    <% if activity.id %>
+    <input class="btn btn-primary" type="submit" value="Save Acitivty" name="commit">
+    <% else %>
+     <input class="btn btn-primary" type="submit" value="Create Acitivty" name="commit">
+     <% end %>
   </div>
 <% end %>
 <%= javascript_pack_tag 'init_auto_complete' %>
