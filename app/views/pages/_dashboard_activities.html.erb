@@ -9,15 +9,15 @@
 <% elsif params.include?(:query) %>
  <div class="dashbaord-cards">
   <% if params[:query] == 'joined' %>
-    <h3>You have not joined any activities yet</h3>
+    <div class="no-activities">You haven't joined any activities yet!</div>
   <% elsif params[:query] == 'created' %>
-    <h3>You have not created any activities yet</h3>
+    <div class="no-activities">You haven't created any activities yet</div>
   <% elsif params[:query] == 'past' %>
-    <h3>You have no past activities</h3>
+    <div class="no-activities">You have no past activities</div>
   <% else %>
-    <h3>You have no activities</h3>
+    <div class="no-activities">You have no activities</div>
   <% end %>
   <% else %> <%# no activities, but no query given %>
-  <h3>You have no activities</h3>
+  <div class="no-activities">You have no activities</div>
 <% end %>
 </div>

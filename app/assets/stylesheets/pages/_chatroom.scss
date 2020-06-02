@@ -1,0 +1,37 @@
+.title-chat {
+  color: #f46b27;
+}
+
+.message-container i {
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  text-transform: capitalize;
+}
+
+#messages {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.chatroom-container {
+  padding: 10px;
+}
+
+.btn-chat {
+  color: $white !important;
+  font-size: x-medium;
+  padding: 3px 12px;
+  border-radius: 180px;
+  background: $black;
+  border: 1px solid $orange;
+}
+
+.message-box input {
+  border-radius: 10px;
+}
+
+.chatrooms-container {
+  background-color: white;
+  padding: 10px;
+}
