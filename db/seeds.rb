@@ -56,7 +56,7 @@ descriptions << "LMK if you know someone who enjoys a run"
 descriptions << "My favorite shape is ball ;) "
 descriptions << "Got Game?"
 descriptions << "Sweating it out"
-descriptions << "Go LARGE or go HOME"
+descriptions << "Go BIG or go HOME"
 
 ############################# Destroy database #############################
 ## Cleaning Database
@@ -431,12 +431,6 @@ search_results_female_4 = Unsplash::Photo.search("female face").take(5)
   puts "Player #{user.username} created"
 end
 
-<<<<<<< HEAD
-# Create an array of images 40 -- has_one_attached :photo
-# Loop into the photos for each user not repeating (each user with his own pict)
-# Each user for the demo should have his own background pict -- has_one_attached :background_photo
-=======
-
 puts "Connecting Chatrooms"
 Chatroom.connect_all_chatrooms
 
@@ -444,4 +438,3 @@ Chatroom.connect_all_chatrooms
 # Loop into the photos for each user not repeating (each user with his own pict)
 # Each user for the demo should have his own background pict
 
->>>>>>> master
