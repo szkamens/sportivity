@@ -1,6 +1,6 @@
 <div class="chatrooms-container">
   <h1 class="title-chatroom">Your Chats</h1>
   <% @chatrooms.each do |chatroom| %>
-  <%= link_to chatroom.activity.title, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.last.id}" %>
+  <%= link_to chatroom.activity.title, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.size > 0 ? chatroom.messages.last.id : ''}" %>
   <% end %>
 </div>
