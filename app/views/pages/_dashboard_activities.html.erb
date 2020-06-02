@@ -1,6 +1,6 @@
 <% if activities.any? %>
   <div class="activities-cards">
-    <% activities.each do |activity| %>
+    <% activities.sort_by(&:start_time).each do |activity| %>
       <%= render 'activity_card', activity: activity %>
       <p></p>
     <% end %>
