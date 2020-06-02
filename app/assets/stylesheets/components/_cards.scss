@@ -34,8 +34,8 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  margin-bottom: 0px;
   text-decoration: none;
-  margin-bottom: -17px;
 }
 
 .card-activity-index-infos .card-activity-index-btn{
@@ -53,9 +53,6 @@
   align-items: center;
   position: relative;
   justify-content: space-around;
-  border-top-style: solid;
-  border-top-color: $black;
-  border-top-width: 1px;
 }
 
 .card-activity-index-players p {
@@ -115,12 +112,15 @@
   margin: 40px;
   margin-top: 110px;
 }
+
 .card-act-created p {
 font-size: x-large;
 }
+
 .card-act-desc {
   margin-top: -46px;
 }
+
 .card-act-desc p{
 font-size: large;
 }

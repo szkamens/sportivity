@@ -1,7 +1,7 @@
 .container-user-show {
   display: flex;
   flex-direction: column;
-  padding: 83px 52px;
+  padding: 1px 30px;
   margin-bottom: 10px;
 }
 
@@ -24,4 +24,9 @@
   .container-user-show {
     max-width: 600px;
   }
+}
+
+.limit{
+  width: 350px;
+  word-wrap: break-word;
 }

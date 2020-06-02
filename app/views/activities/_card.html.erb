@@ -2,7 +2,7 @@
   <%= link_to(activity_path(activity)) do %>
     <div class="card-activity-index">
       <%= image_tag "#{activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
-      <div class="card-activity-index-infos">
+      <div class="card-activity-index-infos border-bottom">
         <div>
           <h2 class='mb-2'><%= activity.title.capitalize %></h2>
           <p class='mb-1'><%= activity.location %></p>
@@ -13,15 +13,15 @@
       <div class="card-activity-index-players">
         <div class="mr-8 card-activity-index-host">
         <% if activity.user.photo.attached? %>
-          <%= link_to(user_path(activity.user)) do%><%=cl_image_tag(activity.user.photo.key, crop: :fill, class: "avatar-large") %><% end %>
+          <%= link_to(user_path(activity.user)) do%><%=cl_image_tag(activity.user.photo.key, crop: :thumb, gravity: :face, class: "avatar-large") %><% end %>
         <% else %>
           <%= link_to(user_path(activity.user)) do%><%= image_tag "default_avatar.png", crop: :fill, class:"avatar-large" %><% end %>
         <% end %>
         </div>
         <div class="card-activity-index-player">
-          <% activity.users.take(3).map do |u| %>
+          <% activity.users.reject{ |us| us == activity.user }.take(3).map do |u| %>
             <% if u.photo.attached? %>
-              <%= link_to(user_path(u)) do%><%= cl_image_tag(u.photo.key, crop: :fill, class: "avatar") %><% end %>
+              <%= link_to(user_path(u)) do%><%= cl_image_tag(u.photo.key, crop: :thumb, gravity: :face, class: "avatar") %><% end %>
             <% else %>
               <%= link_to(user_path(u)) do%><%= image_tag "default_avatar.png", crop: :fill, class:"avatar" %><% end %>
             <% end %>

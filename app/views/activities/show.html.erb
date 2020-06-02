@@ -1,4 +1,4 @@
-<div class='container-index mb-10 p-3'>
+<div class='container-show mb-10 p-3'>
 
   <div class="card-activity-show border-bottom">
     <p class="back-arrow">
@@ -27,6 +27,7 @@
       <a class="card-activity-show-btn btn" href="#"><%= @activity.sport.name %> </a>
 
       <div class="card-activity-show-frame">
+        <% if @activity.is_owner?(current_user) %>
         <div class="card-activity-show-players">
           <p> <strong>Limit: </strong> </p>
           <p> <strong> <%= @activity.players.count %>  </strong> playing </p>
@@ -37,16 +38,28 @@
           <p> <strong> Skill Level: </strong> </p>
           <p> <%= @activity.skill_level%></p>
         </div>
-        <div class="divider-vertical"></div>
+        <% else %>
+        <div class="card-activity-show-players">
+          <p> <strong>Limit: </strong> </p>
+          <p> <strong> <%= @activity.players.count %>  </strong> playing </p>
+          <p>  <strong> <%= @activity.player_limit - @activity.players.count %> </strong>  needed </p>
+        </div>
+        <div class="divider-vertical-avatar"></div>
+        <div class="card-activity-show-skill">
+          <p> <strong> Skill Level: </strong> </p>
+          <p> <%= @activity.skill_level%></p>
+        </div>
+        <div class="divider-vertical-avatar"></div>
         <div class="card-activity-show-host-photo">
           <p> <strong>Host: </strong> </p>
           <% if @activity.user.photo.attached? %>
           <%= link_to(user_path(@activity.user)) do%>
-          <%=cl_image_tag(@activity.user.photo.key, crop: :fill, class: "avatar-showpage") %>
+          <%=cl_image_tag(@activity.user.photo.key, crop: :thumb, gravity: :face, class: "avatar-showpage") %>
           <% end %>
           <% else %>
           <%= link_to(user_path(@activity.user)) do%>
           <%= image_tag "default_avatar.png", crop: :fill, class:"avatar-large" %>
+          <% end %>
           <% end %>
           <% end %>
         </div>
@@ -70,5 +83,7 @@
     </div>
   </div>
 </div>
+
+
 
 

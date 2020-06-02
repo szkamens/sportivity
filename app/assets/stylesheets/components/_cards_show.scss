@@ -3,9 +3,15 @@
   padding: 0 90px;
 }
 
+.container-show {
+  background-color: $black;
+  padding: 0 90px;
+  height: calc(100vh - 70px);
+}
+
 .card-activity-show {
   background: $white;
-  height: 100vh;
+  height: calc(100vh - 90px);
 }
 
 .card-activity-show > img {
@@ -72,6 +78,12 @@
 }
 
 .divider-vertical{
+  width: 1px;
+  height: 75px;
+  background-color: $black;
+}
+
+.divider-vertical-avatar {
   width: 1px;
   height: 90px;
   background-color: $black;

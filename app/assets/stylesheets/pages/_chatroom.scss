@@ -2,6 +2,10 @@
   color: #f46b27;
 }
 
+.title-chatroom {
+  color: #f46b27;
+}
+
 .message-container i {
   border-bottom: solid;
   border-bottom-width: 1px;
@@ -12,10 +16,16 @@
   background-color: white;
   border-radius: 10px;
   padding: 20px;
+  height: 65%;
+  padding: 20px;
+  max-height: calc(100vh - 70px - 45px - 61px - 30px);
+  overflow: scroll;
 }
 
 .chatroom-container {
   padding: 10px;
+  height: 100%;
+
 }
 
 .btn-chat {
@@ -32,6 +42,31 @@
 }
 
 .chatrooms-container {
-  background-color: white;
   padding: 10px;
+  height: 100%;
+}
+
+.conversations {
+  margin-bottom: 20px;
+}
+
+.conversation-details {
+  padding: 10px;
+  justify-content: end;
+  position: relative;
+  display: flex;
+}
+
+.chatroom-card {
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 28px;
+  border: 1px solid $orange;
+  color: #0E0000;
+}
+
+.conversation-details a {
+  color: $black;
+  font-size: medium;
 }

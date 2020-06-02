@@ -6,7 +6,7 @@
   <% end %>
   <div>
   <% if @user.photo.attached? %>
-    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :fill, class: "container-banner avatar-x-large") %>
+    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :thumb, gravity: :face, class: "container-banner avatar-x-large") %>
   <% else %>
     <%= image_tag "default_avatar.png", width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large" %>
   <% end %>
@@ -15,17 +15,23 @@
     </div>
   </div>
 </div>
+
 <div class='container-user-show'>
   <div class='row'>
-    <div class='card-act-desc'>
+    <div class='card-act-desc limit'>
       <% if user.description.nil? || user.description == "" %>
-      <p><em>Hey <%= user.username.capitalize %>, Add a little something about yourself..</em></p>
+      <p><em>Welcome <%= user.username.capitalize %>, add something about yourself...</em></p>
       <% else %>
-      <p>" <em> <%= user.description %> </em>"</p>
+      <p><em> <%= user.description %> </em></p>
       <% end %>
-      <%= link_to edit_user_path(@user), class: "btn-sport-fav" do%><i class="fas fa-edit"></i><% end %>
+      <%= link_to edit_user_path(@user), class: "btn-sport-fav m-0" do%>
+      Edit &nbsp; <i class="fas fa-edit"></i>
+      <% end %>
     </div>
   </div>
+
+  <div class="card-activity-index-infos border-bottom mt-3"></div>
+
   <div class='row'>
     <div class='btn-sport-fav-flex' >
       <% user.sports.each  do |s| %>
@@ -36,14 +42,20 @@
       <% end %>
     </div>
   </div>
+
+  <div class="card-activity-index-infos border-bottom"></div>
+
   <div class='row'>
     <div class='card-act-desc-joins'>
       <p>Sportivities Joined: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= user.activities_joined.count %></strong> </p>
       <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= user.activities.count %></strong> </p>
     </div>
   </div>
+
+  <div class="card-activity-index-infos border-bottom"></div>
+
   <div>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-sign-page" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-sign-page d-flex justify-content-center mt-4" %>
   </div>
 </div>
 
