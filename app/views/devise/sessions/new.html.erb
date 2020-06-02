@@ -1,22 +1,27 @@
 <div class="login-page-wrapper col-sm">
-  <div class="login-logo-container"><img class="login-page-logo" href="<%= root_path %>" src="https://res.cloudinary.com/df0e4j6rq/image/upload/v1590911210/sportivity/sportivity_frontcover_zdaf11.png" alt=""></div>
+  <div class="login-logo-container">
+    <img class="login-page-logo" href="<%= root_path %>" src="https://res.cloudinary.com/df0e4j6rq/image/upload/v1590911210/sportivity/sportivity_frontcover_zdaf11.png" alt="">
+  </div>
+
   <h2>Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+  <div class="form-inputs">
+    <%= f.input :email,
+    required: false,
+    autofocus: true,
+    input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+    required: false,
+    input_html: { autocomplete: "current-password" } %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "card-activity-index-btn btn btn-sign-page" %>
-    </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Log in", class: "homepage-btn btn btn-sign-page" %>
+  </div>
   <% end %>
-  <%= render "devise/shared/links" %>
+  <div class="container-login-button-bottom">
+   <%= render "devise/shared/links" %>
+  </div>
 </div>

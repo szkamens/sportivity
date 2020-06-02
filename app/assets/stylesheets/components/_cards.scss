@@ -1,13 +1,13 @@
 .card-activity-index {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 28px;
   border: 1px solid $orange;
 }
 
 .card-activity-index > img, .card-activity-index img.card-activity-image  {
-  height: 150px;
+  height: 112px;
   width: 100%;
   object-fit: cover;
 }
@@ -34,16 +34,16 @@
   align-items: flex-end;
   position: relative;
   margin-bottom: -14px;
+  text-decoration: none;
 }
 
 .card-activity-index-infos .card-activity-index-btn{
   position: absolute;
   left: 16px;
-  top: -41px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  top: -36px;
   width: fit-content;
-  font-size: x-small;
+  font-size: 10px;
+  text-decoration: none;
 }
 
 .card-activity-index .card-activity-index-players {
@@ -141,4 +141,11 @@ font-size: large;
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.dashbaord-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
 }

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :photo
+  has_one_attached :background_photo
 
   has_many :players
   has_many :activities
@@ -12,7 +13,8 @@ class User < ApplicationRecord
   has_many :sport_users
   has_many :sports, through: :sport_users
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 3}
+  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 12 }
+  validates :description, presence: true, length: { maximum: 120 }
   validates :gender, presence: true, inclusion: { in: %w[Male Female] }
 
   def activities_joined

@@ -1,7 +1,15 @@
 <div class='container-banner'>
-  <%= image_tag "yoga.jpg", class: 'banner' %>
+  <% if @user.background_photo.attached? %>
+    <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
+  <% else %>
+    <%= image_tag "running.jpg", crop: :fill, class: 'banner' %>
+  <% end %>
   <div>
-    <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="container-banner avatar-x-large" />
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :fill, class: "container-banner avatar-x-large") %>
+  <% else %>
+    <%= image_tag "default_avatar.png", width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large" %>
+  <% end %>
     <div class='banner username'><%= user.username.upcase %></div>
   </div>
 </div>
@@ -33,6 +41,5 @@
       <p>Sportivities Joined: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= user.activities_joined.count %></strong> </p>
       <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= user.activities.count %></strong> </p>
     </div>
-    <div>
   </div>
 </div>

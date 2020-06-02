@@ -8,16 +8,24 @@
           <p class='mb-1'><%= activity.location %></p>
           <p class='mb-1'><%= activity.start_time.strftime("%A, %B %-d, %H:%M") %></p>
         </div>
-        <%= link_to activity.sport.name, class: "card-activity-index-btn btn btn-sport" %>
+        <a class="card-activity-index-btn btn btn-sport" href="#"><%= activity.sport.name %></a>
       </div>
       <div class="card-activity-index-players">
         <div class="mr-8 card-activity-index-host">
-          <img src="https://kitt.lewagon.com/placeholder/users/nati95" class="avatar-large" />
+        <% if activity.user.photo.attached? %>
+          <%= link_to(user_path(activity.user)) do%><%=cl_image_tag(activity.user.photo.key, crop: :fill, class: "avatar-large") %><% end %>
+        <% else %>
+          <%= link_to(user_path(activity.user)) do%><%= image_tag "default_avatar.png", crop: :fill, class:"avatar-large" %><% end %>
+        <% end %>
         </div>
         <div class="card-activity-index-player">
-          <img src="https://kitt.lewagon.com/placeholder/users/arielgarbarsky" class="avatar" />
-          <img src="https://kitt.lewagon.com/placeholder/users/szkamens" class="avatar" />
-          <img src="https://kitt.lewagon.com/placeholder/users/vinzka" class="avatar" />
+          <% activity.users.take(3).map do |u| %> 
+            <% if u.photo.attached? %>
+              <%= link_to(user_path(u)) do%><%= cl_image_tag(u.photo.key, crop: :fill, class: "avatar") %><% end %>
+            <% else %>
+              <%= link_to(user_path(u)) do%><%= image_tag "default_avatar.png", crop: :fill, class:"avatar" %><% end %>
+            <% end %>
+          <% end %>
           <div class='card-activity-index-ct'>
             <% if activity.players.count > 4  %>
               <span>+<%= activity.players.count - 4 %> </span>
