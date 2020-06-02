@@ -1,7 +1,15 @@
 <div class='container-banner'>
-  <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
+  <% if @user.background_photo.attached? %>
+    <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
+  <% else %>
+    <%= image_tag "running.jpg", crop: :fill, class: 'banner' %>
+  <% end %>
   <div>
-    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large") %>
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :fill, class: "container-banner avatar-x-large") %>
+  <% else %>
+    <%= image_tag "default_avatar.png", width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large" %>
+  <% end %>
     <div class='banner username'>
       <h1><%= user.username.upcase %></h1>
     </div>
@@ -34,4 +42,8 @@
       <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= user.activities.count %></strong> </p>
     </div>
   </div>
+  <div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-sign-page" %>
+  </div>
 </div>
+

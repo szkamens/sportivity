@@ -20,8 +20,8 @@
         <h2 class='show-title'><%= @activity.title.capitalize %></h2>
         <% end %>
         </div>
-        <p class='show-paragraph' style= "width: max-content"><%= '🗓'  %> <%= @activity.start_time.strftime("%A, %B %-d, %H:%M -") %> <%= @activity.end_time.strftime("%H:%M")%> </p>
-        <p class='show-paragraph' style= "width: max-content"><%= '📍' %><%= @activity.location %></p>
+        <p class='show-paragraph'><%= '🗓'  %> <%= @activity.start_time.strftime("%A, %B %-d, %H:%M -") %> <%= @activity.end_time.strftime("%H:%M")%> </p>
+        <p class='show-paragraph'><%= '📍' %><%= @activity.location %></p>
         <p class='show-paragraph'><%= @activity.description %></p>
       </div>
       <a class="card-activity-show-btn btn" href="#"><%= @activity.sport.name %></a>
