@@ -2,7 +2,7 @@
   <%= link_to(activity_path(activity)) do %>
     <div class="card-activity-index">
       <%= image_tag "#{activity.sport.name.downcase}.jpg", class: 'card-activity-image' %>
-      <div class="card-activity-index-infos border-bottom">
+      <div class="card-activity-index-infos">
         <div>
           <h2 class='mb-2'><%= activity.title.capitalize %></h2>
           <p class='mb-1'><%= activity.location %></p>
@@ -19,7 +19,7 @@
         <% end %>
         </div>
         <div class="card-activity-index-player">
-          <% activity.users.take(3).drop(1).map do |u| %> 
+          <% activity.users.take(3).drop(1).map do |u| %>
             <% if u.photo.attached? %>
               <%= link_to(user_path(u)) do%><%= cl_image_tag(u.photo.key, crop: :fill, class: "avatar") %><% end %>
             <% else %>

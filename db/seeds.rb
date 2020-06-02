@@ -1,5 +1,9 @@
 require 'faker'
 
+
+############################# Destroy Chatrooms #############################
+Chatroom.destroy_all
+
 ############################# Random Pictures UNSPLASH #############################
 # TENNIS
 tennis_pic = "https://source.unsplash.com/1600x900/?tennis"
