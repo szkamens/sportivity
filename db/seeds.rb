@@ -1,4 +1,5 @@
 require 'faker'
+require "open-uri"
 
 ############################# Random Pictures UNSPLASH #############################
 # TENNIS
@@ -54,6 +55,8 @@ descriptions << "Rain or shine, I'm on the line!"
 descriptions << "LMK if you know someone who enjoys a run"
 descriptions << "My favorite shape is ball ;) "
 descriptions << "Got Game?"
+descriptions << "Sweating it out"
+descriptions << "Go LARGE or go HOME"
 
 ############################# Destroy database #############################
 ## Cleaning Database
@@ -246,11 +249,17 @@ activities_to_do = [ariels_soccer_match, schneurs_tennis_match,
 
 puts "Creating Male Players(game joiners) & Users(game host) for the game.....SOCCER-INTERMIDATE"
 
+#make a call (gets 10 pics)
+search_results_man = Unsplash::Photo.search("man face").take(5)
+
 5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_man[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:football], skill_level: 'Intermediate')
   SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Intermediate')
   choosen_match = activities_to_do.sample
@@ -263,12 +272,15 @@ end
 
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game.....SOCCER-INTERMIDATE"
-
+search_results_female = Unsplash::Photo.search("female face").take(3)
 3.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_female[i].urls.small)
+  user.photo.attach(io: file, filename: "female-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:football], skill_level: 'Intermediate')
   SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Intermediate')
     choosen_match = activities_to_do.sample
