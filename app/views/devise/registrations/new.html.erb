@@ -20,15 +20,17 @@
     <%= f.input :password_confirmation,
     required: true,
     input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :username,required: true, hint: 'Between 3 and 12 characters only' %>
-    <%= f.input :description,required: true %>
+    <%= f.input :description,required: true, hint: 'Maximum 120 characters' %>
+    
     <%= f.input :gender,collection: ['Male', 'Female'], required: true %>
     <%= f.input :photo, as: :file, label: 'My avatar' %>
     <%= f.input :background_photo, as: :file, label: 'Personal background photo' %>
   </div>
 
   <div class="form-actions mb-3">
-    <%= f.button :submit, "Sign up", class: "card-activity-index-btn btn btn-sign-page" %>
+    <%= f.button :submit, "Sign up", class: "homepage-btn btn btn-sign-page" %>
   </div>
   <% end %>
 </div>
