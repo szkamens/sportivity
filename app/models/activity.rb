@@ -11,7 +11,7 @@ class Activity < ApplicationRecord
   validates :player_limit, presence: true, numericality: true
   validates :location, presence: true
   validates :skill_level, inclusion: { in: %w[Beginner Intermediate Pro] }
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 120 }
   validates :sport, presence: true
   validates :user, presence: true
 
