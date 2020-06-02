@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :sports, through: :sport_users
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 3}
+  validates :description, presence: true, length: { maximum: 120 }
   validates :gender, presence: true, inclusion: { in: %w[Male Female] }
 
   def activities_joined
