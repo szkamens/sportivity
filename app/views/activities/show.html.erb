@@ -24,18 +24,31 @@
         <p class='show-paragraph'><%= '📍' %><%= @activity.location %></p>
         <p class='show-paragraph'><%= @activity.description %></p>
       </div>
-      <a class="card-activity-show-btn btn" href="#"><%= @activity.sport.name %></a>
+      <a class="card-activity-show-btn btn" href="#"><%= @activity.sport.name %> </a>
 
       <div class="card-activity-show-frame">
         <div class="card-activity-show-players">
           <p> <strong>Limit: </strong> </p>
-          <p> <strong> <%= @activity.players.count %>  </strong> playing</p>
+          <p> <strong> <%= @activity.players.count %>  </strong> playing </p>
           <p>  <strong> <%= @activity.player_limit - @activity.players.count %> </strong>  needed </p>
         </div>
         <div class="divider-vertical"></div>
         <div class="card-activity-show-skill">
           <p> <strong> Skill Level: </strong> </p>
           <p> <%= @activity.skill_level%></p>
+        </div>
+        <div class="divider-vertical"></div>
+        <div class="card-activity-show-host-photo">
+          <p> <strong>Host: </strong> </p>
+          <% if @activity.user.photo.attached? %>
+          <%= link_to(user_path(@activity.user)) do%>
+          <%=cl_image_tag(@activity.user.photo.key, crop: :fill, class: "avatar-showpage") %>
+          <% end %>
+          <% else %>
+          <%= link_to(user_path(@activity.user)) do%>
+          <%= image_tag "default_avatar.png", crop: :fill, class:"avatar-large" %>
+          <% end %>
+          <% end %>
         </div>
       </div>
 
