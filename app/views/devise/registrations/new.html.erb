@@ -20,8 +20,10 @@
     <%= f.input :password_confirmation,
     required: true,
     input_html: { autocomplete: "new-password" } %>
-    <%= f.input :username,required: true %>
+
+    <%= f.input :username,required: true, hint: 'Between 3 and 12 characters only' %>
     <%= f.input :description,required: true, hint: 'Maximum 120 characters' %>
+    
     <%= f.input :gender,collection: ['Male', 'Female'], required: true %>
     <%= f.input :photo, as: :file, label: 'My avatar' %>
     <%= f.input :background_photo, as: :file, label: 'Personal background photo' %>
