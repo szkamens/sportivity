@@ -10,9 +10,12 @@
   <% else %>
     <%= image_tag "default_avatar.png", width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large" %>
   <% end %>
-    <div class='banner username'><%= user.username.upcase %></div>
+    <div class='banner username'>
+      <h1><%= user.username.upcase %></h1>
+    </div>
   </div>
 </div>
+
 <div class='container-user-show'>
   <div class='row'>
     <div class='card-act-desc'>
