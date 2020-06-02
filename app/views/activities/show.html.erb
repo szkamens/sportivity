@@ -42,7 +42,7 @@
           <p> <strong>Host: </strong> </p>
           <% if @activity.user.photo.attached? %>
           <%= link_to(user_path(@activity.user)) do%>
-          <%=cl_image_tag(@activity.user.photo.key, crop: :fill, class: "avatar-showpage") %>
+          <%=cl_image_tag(@activity.user.photo.key, crop: :thumb, gravity: :face, class: "avatar-showpage") %>
           <% end %>
           <% else %>
           <%= link_to(user_path(@activity.user)) do%>
