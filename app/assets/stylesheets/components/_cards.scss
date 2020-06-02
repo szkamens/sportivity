@@ -47,7 +47,7 @@
 }
 
 .card-activity-index .card-activity-index-players {
-  padding: 8px;
+  padding: 16px;
   display: flex;
   align-items: center;
   position: relative;
@@ -79,6 +79,7 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-left: 4px;
+  margin-bottom: -14px;
 }
 
 .card-activity-index-players .card-activity-index-ct {

@@ -13,10 +13,15 @@ class User < ApplicationRecord
   has_many :sport_users
   has_many :sports, through: :sport_users
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 3}
+  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 12 }
+  validates :description, presence: true, length: { maximum: 120 }
   validates :gender, presence: true, inclusion: { in: %w[Male Female] }
 
   def activities_joined
     Player.where(user: self).map{ |player| player.activity }
+  end
+
+  def my_activity_chatrooms
+    self.activities_joined.map { |activity| activity.my_chatroom }
   end
 end

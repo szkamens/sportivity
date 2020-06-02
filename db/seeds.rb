@@ -431,6 +431,17 @@ search_results_female_4 = Unsplash::Photo.search("female face").take(5)
   puts "Player #{user.username} created"
 end
 
+<<<<<<< HEAD
 # Create an array of images 40 -- has_one_attached :photo
 # Loop into the photos for each user not repeating (each user with his own pict)
 # Each user for the demo should have his own background pict -- has_one_attached :background_photo
+=======
+
+puts "Connecting Chatrooms"
+Chatroom.connect_all_chatrooms
+
+# Create an array of images 40
+# Loop into the photos for each user not repeating (each user with his own pict)
+# Each user for the demo should have his own background pict
+
+>>>>>>> master

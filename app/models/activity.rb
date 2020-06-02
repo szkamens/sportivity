@@ -11,7 +11,7 @@ class Activity < ApplicationRecord
   validates :player_limit, presence: true, numericality: true
   validates :location, presence: true
   validates :skill_level, inclusion: { in: %w[Beginner Intermediate Pro] }
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 120 }
   validates :sport, presence: true
   validates :user, presence: true
 
@@ -26,5 +26,13 @@ class Activity < ApplicationRecord
 
   def add_player(user, invitation = false)
     Player.create!(user: user, activity: self, invitation: invitation)
+  end
+
+  def add_chatroom
+    Chatroom.create(activity: self)
+  end
+
+  def my_chatroom
+    Chatroom.where(activity: self).first
   end
 end
