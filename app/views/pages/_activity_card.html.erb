@@ -9,7 +9,7 @@
         </div>
         <div class="right-side">
           <%= link_to activity.sport.name, activity_path(activity), class: "card-activity-dash-btn btn btn-sport" %>
-          <%= link_to "💬", root_path, class: 'chat-dash' %>
+          <%= link_to "💬", activity_chatroom_path(activity, activity.my_chatroom), class: 'chat-dash' %>
         </div>
       </div>
     </div>

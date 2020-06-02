@@ -1,0 +1,3 @@
+<% @chatrooms.each do |chatroom| %>
+<%= link_to chatroom.activity.title, activity_chatroom_path(chatroom.activity, chatroom) %>
+<% end %>

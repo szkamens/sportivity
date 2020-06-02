@@ -27,4 +27,12 @@ class Activity < ApplicationRecord
   def add_player(user, invitation = false)
     Player.create!(user: user, activity: self, invitation: invitation)
   end
+
+  def add_chatroom
+    Chatroom.create(activity: self)
+  end
+
+  def my_chatroom
+    Chatroom.where(activity: self).first
+  end
 end

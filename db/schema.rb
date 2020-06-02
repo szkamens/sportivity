@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_135750) do
+ActiveRecord::Schema.define(version: 2020_06_01_134210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,23 @@ ActiveRecord::Schema.define(version: 2020_05_27_135750) do
     t.string "title"
     t.index ["sport_id"], name: "index_activities_on_sport_id"
     t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_chatrooms_on_activity_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -98,6 +115,9 @@ ActiveRecord::Schema.define(version: 2020_05_27_135750) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "sports"
   add_foreign_key "activities", "users"
+  add_foreign_key "chatrooms", "activities"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "players", "activities"
   add_foreign_key "players", "users"
   add_foreign_key "sport_users", "sports"

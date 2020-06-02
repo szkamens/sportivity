@@ -386,6 +386,11 @@ puts "Creating Female Players(game joiners) & Users(game host) for the game.....
   puts "Player #{user.username} created"
 end
 
+
+puts "Connecting Chatrooms"
+Chatroom.connect_all_chatrooms
+
 # Create an array of images 40
 # Loop into the photos for each user not repeating (each user with his own pict)
 # Each user for the demo should have his own background pict
+
