@@ -15,7 +15,7 @@
 
     </div>
   </div>
-  <%= f.input :description, required: true %>
+  <%= f.input :description, required: true, input_html: { maxlength: 120 } %>
   <div class="form-group d-flex justify-content-end">
     <% if activity.id %>
     <input class="btn btn-primary" type="submit" value="Save Acitivty" name="commit">
