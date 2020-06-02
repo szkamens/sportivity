@@ -6,7 +6,7 @@
   <% end %>
   <div>
   <% if @user.photo.attached? %>
-    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :fill, class: "container-banner avatar-x-large") %>
+    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :thumb, gravity: :face, class: "container-banner avatar-x-large") %>
   <% else %>
     <%= image_tag "default_avatar.png", width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large" %>
   <% end %>
@@ -17,10 +17,10 @@
   <div class='row'>
     <div class='card-act-desc'>
       <% if user.description.nil? || user.description == ""  %>
-      <p><em><%= @user.username.capitalize %> loves sports, but doesn't love talking about 
-        <% if @user.gender == 'Male' %> 
+      <p><em><%= @user.username.capitalize %> loves sports, but doesn't love talking about
+        <% if @user.gender == 'Male' %>
           himself
-          <% else %> 
+          <% else %>
           herself
           <% end %>
            :)</em></p>

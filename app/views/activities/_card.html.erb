@@ -13,15 +13,15 @@
       <div class="card-activity-index-players">
         <div class="mr-8 card-activity-index-host">
         <% if activity.user.photo.attached? %>
-          <%= link_to(user_path(activity.user)) do%><%=cl_image_tag(activity.user.photo.key, crop: :fill, class: "avatar-large") %><% end %>
+          <%= link_to(user_path(activity.user)) do%><%=cl_image_tag(activity.user.photo.key, crop: :thumb, gravity: :face, class: "avatar-large") %><% end %>
         <% else %>
           <%= link_to(user_path(activity.user)) do%><%= image_tag "default_avatar.png", crop: :fill, class:"avatar-large" %><% end %>
         <% end %>
         </div>
         <div class="card-activity-index-player">
-          <% activity.users.take(3).drop(1).map do |u| %> 
+          <% activity.users.take(3).drop(1).map do |u| %>
             <% if u.photo.attached? %>
-              <%= link_to(user_path(u)) do%><%= cl_image_tag(u.photo.key, crop: :fill, class: "avatar") %><% end %>
+              <%= link_to(user_path(u)) do%><%= cl_image_tag(u.photo.key, crop: :thumb, gravity: :face, class: "avatar") %><% end %>
             <% else %>
               <%= link_to(user_path(u)) do%><%= image_tag "default_avatar.png", crop: :fill, class:"avatar" %><% end %>
             <% end %>
