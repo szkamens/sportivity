@@ -34,4 +34,8 @@
       <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= user.activities.count %></strong> </p>
     </div>
   </div>
+  <div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-sign-page" %>
+  </div>
 </div>
+
