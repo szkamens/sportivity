@@ -19,7 +19,7 @@
         <% end %>
         </div>
         <div class="card-activity-index-player">
-          <% activity.users.take(3).map do |u| %> 
+          <% activity.users.take(3).drop(1).map do |u| %> 
             <% if u.photo.attached? %>
               <%= cl_image_tag(u.photo.key, crop: :fill, class: "avatar") %>
             <% else %>
