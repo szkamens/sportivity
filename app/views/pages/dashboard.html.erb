@@ -1,15 +1,10 @@
 <div class="container-dash">
   <br>
   <div class="current-games">
-    <div class="joined">
-      <%= link_to "Joined", dashboard_path(query:"joined"), class:"btn-dashboard" %>
-    </div>
-    <div class="created">
-      <%= link_to "Created", dashboard_path(query:"created"), class:"btn-dashboard" %>
-    </div>
-    <div class="past">
-      <%= link_to "Past", dashboard_path(query:"past"), class:"btn-dashboard" %>
-    </div>
+      <%= link_to "Joined", dashboard_path(query:"joined"), class:"#{params[:query] == "joined" || params[:query].nil? ? 'btn-dashboard' : 'btn-dash-game'}" %>
+      <%= link_to "Created", dashboard_path(query:"created"), class:"#{params[:query] == "created" ? 'btn-dashboard' : 'btn-dash-game'}" %>
+      <%= link_to "Past", dashboard_path(query:"past"), class:"#{params[:query] == "past" ? 'btn-dashboard' : 'btn-dash-game'}" %>
   </div>
+  <br>
   <%= render "dashboard_activities", activities: @activities %>
 </div>

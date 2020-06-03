@@ -104,8 +104,9 @@ locations = ["Arlozorov 100, Tel Aviv", "Balfour 200, Herziliya", "Begin 350, Je
 
 # ///////////// CREATING AN ACTIVITY BY HAND BY ARIEL (FOOTBALL) /////////////
 
-ariel = User.create!(email: 'ariel@ariel.com', password: '123456', gender: 'Male', username: 'ariel')
 
+
+ariel = User.create!(email: 'ariel@ariel.com', password: '123456', gender: 'Male', username: 'ariel')
 ariel.photo.attach(io: File.open("app/assets/images/users/ariel.jpg"), filename: "ariel.jpg")
 ariel.save
 
@@ -126,8 +127,10 @@ ariels_soccer_match = Activity.create!(
 puts "ariels_soccer_match created"
 ariels_soccer_match.add_player(ariel)
 
-schneur = User.create!(email: 'schneur@schneur.com', password: '123456', gender: 'Male', username: 'schneur')
 
+
+
+schneur = User.create!(email: 'schneur@schneur.com', password: '123456', gender: 'Male', username: 'schneur')
 schneur.photo.attach(io: File.open("app/assets/images/users/schneur.jpg"), filename: "schneur.jpg")
 schneur.save
 
@@ -143,13 +146,16 @@ schneurs_tennis_match = Activity.create!(
   user: schneur,
   sport: sports[:tennis],
   title: "tennis singles. We have severals courts to play in!",
-  description: "Come & Join me. The loser pays the coke!"
+  description: "Come & Join me. The loser pays the beers!"
 )
 puts "schneurs_tennis_match created"
 schneurs_tennis_match.add_player(schneur)
 
-naftali = User.create!(email: 'naftali@naftali.com', password: '123456', gender: 'Male', username: 'naftali')
 
+
+
+
+naftali = User.create!(email: 'naftali@lewagon.com', password: '123456', gender: 'Male', username: 'naftali')
 naftali.photo.attach(io: File.open("app/assets/images/users/naftali.jpg"), filename: "naftali.jpg")
 naftali.save
 
@@ -159,7 +165,7 @@ start_time = Time.now + (60 * 60 * 24 * rand(1..7))
 naftalis_yoga_session = Activity.create!(
   start_time: start_time,
   end_time: start_time + (60 * rand(60..90)),
-  player_limit: 20,
+  player_limit: 10,
   location: locations.sample,
   skill_level: 'Pro',
   user: naftali,
@@ -170,52 +176,10 @@ naftalis_yoga_session = Activity.create!(
 puts "naftalis_yoga_session created"
 naftalis_yoga_session.add_player(naftali)
 
-vincent = User.create!(email: 'vincent@vincent.com', password: '123456', gender: 'Male', username: 'vincent')
 
-vincent.photo.attach(io: File.open("app/assets/images/users/vincent.jpg"), filename: "vincent.jpg")
-vincent.save
 
-puts "creating vincents_running_session"
-SportUser.create!(user: vincent, sport: sports[:running], skill_level: 'Beginner')
-start_time = Time.now + (60 * 60 * 24 * rand(1..7))
-vincents_running_session = Activity.create!(
-  start_time: start_time,
-  end_time: start_time + (60 * rand(60..90)),
-  player_limit: 50,
-  location: locations.sample,
-  skill_level: 'Beginner',
-  user: vincent,
-  sport: sports[:running],
-  title: "Run Vincent run!",
-  description: "I will teach you the best technic for running in hard surfaces!"
-)
-puts "vincents_running_session created"
-vincents_running_session.add_player(vincent)
-
-omer = User.create!(email: 'omer@omer.com', password: '123456', gender: 'Male', username: 'omer')
-
-omer.photo.attach(io: File.open("app/assets/images/users/omer.jpg"), filename: "omer.jpg")
-omer.save
-
-puts "creating omers_basketball_match"
-SportUser.create!(user: omer, sport: sports[:basketball], skill_level: 'Pro')
-start_time = Time.now + (60 * 60 * 24 * rand(1..7))
-omers_basketball_match = Activity.create!(
-  start_time: start_time,
-  end_time: start_time + (60 * rand(60..90)),
-  player_limit: 16,
-  location: locations.sample,
-  skill_level: 'Pro',
-  user: omer,
-  sport: sports[:basketball],
-  title: "I use to play with NBA players!",
-  description: "Now I like playing for hobby. Glad if you join me! 4 teams of 4 players!"
-)
-puts "omers_basketball_match created"
-omers_basketball_match.add_player(omer)
 
 david = User.create!(email: 'david@david.com', password: '123456', gender: 'Male', username: 'david')
-
 david.photo.attach(io: File.open("app/assets/images/users/david.jpg"), filename: "david.jpg")
 david.save
 
@@ -236,8 +200,103 @@ davids_basketball_match = Activity.create!(
 puts "davids_basketball_match created"
 davids_basketball_match.add_player(david)
 
-yair = User.create!(email: 'yair@yair.com', password: '123456', gender: 'Male', username: 'yair')
 
+
+
+vincent = User.create!(email: 'vincent@vincent.com', password: '123456', gender: 'Male', username: 'vincent')
+vincent.photo.attach(io: File.open("app/assets/images/users/vincent.jpg"), filename: "vincent.jpg")
+vincent.save
+puts "creating vincents_running_session"
+SportUser.create!(user: vincent, sport: sports[:running], skill_level: 'Beginner')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+vincents_running_session = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 50,
+  location: locations.sample,
+  skill_level: 'Beginner',
+  user: vincent,
+  sport: sports[:running],
+  title: "Run Vincent run!",
+  description: "I will teach you the best technic for running in hard surfaces!"
+)
+puts "vincents_running_session created"
+vincents_running_session.add_player(vincent)
+
+
+
+omer = User.create!(email: 'omer@omer.com', password: '123456', gender: 'Male', username: 'omer')
+omer.photo.attach(io: File.open("app/assets/images/users/omer.jpg"), filename: "omer.jpg")
+omer.save
+
+puts "creating omers_basketball_match"
+SportUser.create!(user: omer, sport: sports[:basketball], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+omers_basketball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 16,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: omer,
+  sport: sports[:basketball],
+  title: "I use to play with NBA players!",
+  description: "Now I like playing for hobby. Glad if you join me! 4 teams of 4 players!"
+)
+puts "omers_basketball_match created"
+omers_basketball_match.add_player(omer)
+
+
+
+
+ilan = User.create!(email: 'ilan@ilan.com', password: '123456', gender: 'Male', username: 'ilan')
+ilan.photo.attach(io: File.open("app/assets/images/users/ilan.jpg"), filename: "ilan.jpg")
+ilan.save
+
+puts "creating ilan_yoga"
+SportUser.create!(user: ilan, sport: sports[:yoga], skill_level: 'Beginner')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+ilan_yoga = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 10,
+  location: locations.sample,
+  skill_level: 'Beginner',
+  user: ilan,
+  sport: sports[:yoga],
+  title: "Relax with Ilan!",
+  description: "Outdoor Yoga lover, join me!"
+)
+puts "ilan_yoga created"
+ilan_yoga.add_player(ilan)
+
+
+
+martin = User.create!(email: 'martin@martin.com', password: '123456', gender: 'Male', username: 'martin')
+martin.photo.attach(io: File.open("app/assets/images/users/martin.jpg"), filename: "martin.jpg")
+martin.save
+puts "creating martins_running_session"
+SportUser.create!(user: martin, sport: sports[:running], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+martins_running_session = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 15,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: martin,
+  sport: sports[:running],
+  title: "Run with my team!",
+  description: "We wanna prepare for the next marathon!"
+)
+puts "martins_running_session created"
+martins_running_session.add_player(martin)
+
+
+
+
+
+yair = User.create!(email: 'yair@yair.com', password: '123456', gender: 'Male', username: 'yair')
 yair.photo.attach(io: File.open("app/assets/images/users/yair.jpg"), filename: "yair.jpg")
 yair.save
 
@@ -259,21 +318,468 @@ puts "yairs_basketball_match created"
 yairs_basketball_match.add_player(yair)
 
 
+
+
 Player.create!(activity: davids_basketball_match, user: omer, accepted_at: Time.now)
 Player.create!(activity: yairs_basketball_match, user: omer, accepted_at: Time.now)
+
+matan = User.create!(email: 'matan@matan.com', password: '123456', gender: 'Male', username: 'matan')
+matan.photo.attach(io: File.open("app/assets/images/users/matan.jpg"), filename: "matan.jpg")
+matan.save
+puts "creating matan_voleyball_match"
+SportUser.create!(user: matan, sport: sports[:volleyball], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+matan_voleyball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 8,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: matan,
+  sport: sports[:volleyball],
+  title: "Pro Voleyball match!",
+  description: "Come and join our weekly match"
+)
+puts "matan_voleyball_match created"
+matan_voleyball_match.add_player(matan)
+
+
+
+ran = User.create!(email: 'ran@ran.com', password: '123456', gender: 'Male', username: 'ran')
+ran.photo.attach(io: File.open("app/assets/images/users/ran.jpg"), filename: "ran.jpg")
+ran.save
+puts "creating rans_running_session"
+SportUser.create!(user: ran, sport: sports[:running], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+rans_running_session = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 15,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: ran,
+  sport: sports[:running],
+  title: "Run challenge!",
+  description: "We wanna cross the 6 km!"
+)
+puts "rans_running_session created"
+rans_running_session.add_player(ran)
+
+
+isaac = User.create!(email: 'isaac@isaac.com', password: '123456', gender: 'Male', username: 'isaac')
+isaac.photo.attach(io: File.open("app/assets/images/users/isaac.jpg"), filename: "isaac.jpg")
+isaac.save
+puts "creating isaac_tennis_match"
+SportUser.create!(user: isaac, sport: sports[:tennis], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+isaac_tennis_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 2,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: isaac,
+  sport: sports[:tennis],
+  title: "Tennis partner nearby?",
+  description: "Wanna play with new people around."
+)
+puts "isaac_tennis_match created"
+isaac_tennis_match.add_player(isaac)
+
+
+
+
+
+eitan = User.create!(email: 'eitan@eitan.com', password: '123456', gender: 'Male', username: 'eitan')
+eitan.photo.attach(io: File.open("app/assets/images/users/eitan.jpg"), filename: "eitan.jpg")
+eitan.save
+puts "creating eitan_voleyball_match"
+SportUser.create!(user: eitan, sport: sports[:volleyball], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+eitan_voleyball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 10,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: eitan,
+  sport: sports[:volleyball],
+  title: "Voley dream team game!",
+  description: "5 vs 5 voley match with pro players"
+)
+puts "eitan_voleyball_match created"
+eitan_voleyball_match.add_player(eitan)
+
+
+leo = User.create!(email: 'leo@leo.com', password: '123456', gender: 'Male', username: 'leo')
+leo.photo.attach(io: File.open("app/assets/images/users/leo.jpg"), filename: "leo.jpg")
+leo.save
+puts "creating leos_running_session"
+SportUser.create!(user: leo, sport: sports[:running], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+leos_running_session = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 20,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: leo,
+  sport: sports[:running],
+  title: "New running skills!",
+  description: "In this session our goal is 10km!"
+)
+puts "leos_running_session created"
+leos_running_session.add_player(leo)
+
+
+
+
+uriel = User.create!(email: 'uriel@uriel.com', password: '123456', gender: 'Male', username: 'uriel')
+uriel.photo.attach(io: File.open("app/assets/images/users/uriel.jpg"), filename: "uriel.jpg")
+uriel.save
+puts "creating uriel_yoga"
+SportUser.create!(user: uriel, sport: sports[:yoga], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+uriel_yoga = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 5,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: uriel,
+  sport: sports[:yoga],
+  title: "Learned Yoga in India!",
+  description: "I know the latest techniques!"
+)
+puts "uriel_yoga created"
+uriel_yoga.add_player(uriel)
+
+
+
+
+lucas = User.create!(email: 'lucas@lucas.com', password: '123456', gender: 'Male', username: 'lucas')
+lucas.photo.attach(io: File.open("app/assets/images/users/lucas.jpg"), filename: "lucas.jpg")
+lucas.save
+puts "creating lucas_voleyball_match"
+SportUser.create!(user: lucas, sport: sports[:football], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+lucas_football_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 21,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: lucas,
+  sport: sports[:football],
+  title: "11 vs 11 game!",
+  description: "Play like professional. Join us!"
+)
+puts "lucas_voleyball_match created"
+lucas_football_match.add_player(lucas)
+
+
+
+
+
+gaby = User.create!(email: 'gaby@gaby.com', password: '123456', gender: 'Male', username: 'gaby')
+gaby.photo.attach(io: File.open("app/assets/images/users/gaby.jpg"), filename: "gaby.jpg")
+gaby.save
+puts "creating gaby_football_match"
+SportUser.create!(user: gaby, sport: sports[:football], skill_level: 'Beginner')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+gaby_football_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 4,
+  location: locations.sample,
+  skill_level: 'Beginner',
+  user: gaby,
+  sport: sports[:football],
+  title: "2 vs 2 indoor soccer",
+  description: "Show your skill in this match."
+)
+puts "gaby_football_match created"
+gaby_football_match.add_player(gaby)
+
+
+
+tomer = User.create!(email: 'tomer@tomer.com', password: '123456', gender: 'Male', username: 'tomer')
+tomer.photo.attach(io: File.open("app/assets/images/users/tomer.jpg"), filename: "tomer.jpg")
+tomer.save
+puts "creating tomer_yoga"
+SportUser.create!(user: tomer, sport: sports[:yoga], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+tomer_yoga = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 10,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: tomer,
+  sport: sports[:yoga],
+  title: "Yoga partners nearby?",
+  description: "Yoga & Chilling with new friends"
+)
+puts "tomer_yoga created"
+tomer_yoga.add_player(tomer)
+
+
+
+
+natan = User.create!(email: 'natan@natan.com', password: '123456', gender: 'Male', username: 'natan')
+natan.photo.attach(io: File.open("app/assets/images/users/natan.jpg"), filename: "natan.jpg")
+natan.save
+puts "creating natan_tennis_match"
+SportUser.create!(user: natan, sport: sports[:tennis], skill_level: 'Beginner')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+natan_tennis_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 4,
+  location: locations.sample,
+  skill_level: 'Beginner',
+  user: natan,
+  sport: sports[:tennis],
+  title: "Someone teach me tennis?",
+  description: "Wanna learn tennis. SOS!"
+)
+puts "natan_tennis_match created"
+natan_tennis_match.add_player(natan)
+
+
+
+
+
+amos = User.create!(email: 'amos@amos.com', password: '123456', gender: 'Male', username: 'amos')
+amos.photo.attach(io: File.open("app/assets/images/users/amos.jpg"), filename: "amos.jpg")
+amos.save
+puts "creating amos_football_match"
+SportUser.create!(user: amos, sport: sports[:football], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+amos_football_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 6,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: amos,
+  sport: sports[:football],
+  title: "3 vs 3 new style soccer",
+  description: "Play this brandnew and fun sport."
+)
+puts "amos_football_match created"
+amos_football_match.add_player(amos)
+
+
+
+tal = User.create!(email: 'tal@tal.com', password: '123456', gender: 'Male', username: 'tal')
+tal.photo.attach(io: File.open("app/assets/images/users/tal.jpg"), filename: "tal.jpg")
+tal.save
+puts "creating tal_voleyball_match"
+SportUser.create!(user: tal, sport: sports[:volleyball], skill_level: 'Beginner')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+tal_voleyball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 10,
+  location: locations.sample,
+  skill_level: 'Beginner',
+  user: tal,
+  sport: sports[:volleyball],
+  title: "Best Voley training course!",
+  description: "Join us in our intensive training course"
+)
+puts "tal_voleyball_match created"
+tal_voleyball_match.add_player(tal)
+
+
+
+
+
+alan = User.create!(email: 'alan@alan.com', password: '123456', gender: 'Male', username: 'alan')
+alan.photo.attach(io: File.open("app/assets/images/users/alan.jpg"), filename: "alan.jpg")
+alan.save
+puts "creating alan_tennis_match"
+SportUser.create!(user: alan, sport: sports[:tennis], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+alan_tennis_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 4,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: alan,
+  sport: sports[:tennis],
+  title: "Doubles game is here!",
+  description: "Having fun is our goal!"
+)
+puts "alan_tennis_match created"
+alan_tennis_match.add_player(alan)
+
+
+
+
+
+elias = User.create!(email: 'elias@elias.com', password: '123456', gender: 'Male', username: 'elias')
+elias.photo.attach(io: File.open("app/assets/images/users/elias.jpg"), filename: "elias.jpg")
+elias.save
+puts "creating elias_basketball_match"
+SportUser.create!(user: elias, sport: sports[:basketball], skill_level: 'Beginner')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+elias_basketball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 10,
+  location: locations.sample,
+  skill_level: 'Beginner',
+  user: elias,
+  sport: sports[:basketball],
+  title: "Wanna exercise?",
+  description: "I wanna run a little bit. Join please!"
+)
+puts "elias_basketball_match created"
+elias_basketball_match.add_player(elias)
+
+
+
+
+
+daniel = User.create!(email: 'daniel@daniel.com', password: '123456', gender: 'Male', username: 'daniel')
+daniel.photo.attach(io: File.open("app/assets/images/users/daniel.jpg"), filename: "daniel.jpg")
+daniel.save
+puts "creating daniel_football_match"
+SportUser.create!(user: daniel, sport: sports[:football], skill_level: 'Beginner')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+daniel_football_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 21,
+  location: locations.sample,
+  skill_level: 'Beginner',
+  user: daniel,
+  sport: sports[:football],
+  title: "Football game",
+  description: "After the match we are going for beers!"
+)
+puts "daniel_football_match created"
+daniel_football_match.add_player(daniel)
+
+
+
+
+
+rafael = User.create!(email: 'rafael@rafael.com', password: '123456', gender: 'Male', username: 'rafael')
+rafael.photo.attach(io: File.open("app/assets/images/users/rafael.jpg"), filename: "rafael.jpg")
+rafael.save
+puts "creating rafael_tennis_match"
+SportUser.create!(user: rafael, sport: sports[:tennis], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+rafael_tennis_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 6,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: rafael,
+  sport: sports[:tennis],
+  title: "Tennis tournament",
+  description: "We have 3 excellents courts. Join!"
+)
+puts "rafael_tennis_match created"
+rafael_tennis_match.add_player(rafael)
+
+
+
+james = User.create!(email: 'james@james.com', password: '123456', gender: 'Male', username: 'james')
+james.photo.attach(io: File.open("app/assets/images/users/james.jpg"), filename: "james.jpg")
+james.save
+puts "creating james_voleyball_match"
+SportUser.create!(user: james, sport: sports[:volleyball], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+james_voleyball_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 6,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: james,
+  sport: sports[:volleyball],
+  title: "Come and train Voley!",
+  description: "If you wanna train Voley this is the place"
+)
+puts "james_voleyball_match created"
+james_voleyball_match.add_player(james)
+
+
+
+
+kevin = User.create!(email: 'kevin@kevin.com', password: '123456', gender: 'Male', username: 'kevin')
+kevin.photo.attach(io: File.open("app/assets/images/users/kevin.jpg"), filename: "kevin.jpg")
+kevin.save
+puts "creating kevin_football_match"
+SportUser.create!(user: kevin, sport: sports[:football], skill_level: 'Intermediate')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+kevin_football_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 10,
+  location: locations.sample,
+  skill_level: 'Intermediate',
+  user: kevin,
+  sport: sports[:football],
+  title: "5 vs 5 indoor!",
+  description: "Some of us used to play for the national team"
+)
+puts "kevin_football_match created"
+kevin_football_match.add_player(kevin)
+
+
+
+
+
+joel = User.create!(email: 'joel@joel.com', password: '123456', gender: 'Male', username: 'joel')
+joel.photo.attach(io: File.open("app/assets/images/users/joel.jpg"), filename: "joel.jpg")
+joel.save
+puts "creating joel_tennis_match"
+SportUser.create!(user: joel, sport: sports[:tennis], skill_level: 'Pro')
+start_time = Time.now + (60 * 60 * 24 * rand(1..7))
+joel_tennis_match = Activity.create!(
+  start_time: start_time,
+  end_time: start_time + (60 * rand(60..90)),
+  player_limit: 4,
+  location: locations.sample,
+  skill_level: 'Pro',
+  user: joel,
+  sport: sports[:tennis],
+  title: "Double tennis match",
+  description: "Love doubles. Much more fun!"
+)
+puts "joel_tennis_match created"
+joel_tennis_match.add_player(joel)
+
+
+
+
+
+
+
+
 
 # ///// ARRAY OF EVENTS OR ACTIVITIES ////
 
 activities_to_do = [ariels_soccer_match, schneurs_tennis_match,
                     naftalis_yoga_session, vincents_running_session, omers_basketball_match,
-                    davids_basketball_match, yairs_basketball_match]
+                    davids_basketball_match, yairs_basketball_match, matan_voleyball_match, tal_voleyball_match,
+                    james_voleyball_match, eitan_voleyball_match, ilan_yoga, uriel_yoga, tomer_yoga, lucas_football_match,
+                    gaby_football_match, amos_football_match, daniel_football_match, elias_basketball_match, isaac_tennis_match,
+                    joel_tennis_match, natan_tennis_match, rafael_tennis_match, alan_tennis_match, kevin_football_match, martins_running_session,
+                    rans_running_session, leos_running_session]
 
 # /////////////////////////////////// ITERATE JOINING GAME SOCCER-INTERMIDATE ///////////////////////////////////
 
 puts "Creating Male Players(game joiners) & Users(game host) for the game.....SOCCER-INTERMIDATE"
 
 search_results_man_1 = Unsplash::Photo.search("man face").take(5)
-
 5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
@@ -454,9 +960,509 @@ search_results_female_4 = Unsplash::Photo.search("female face").take(5)
   puts "Player #{user.username} created"
 end
 
+
+# /////////////////////////////////// ITERATE JOINING GAME YOGA-PRO ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....YOGA-PRO "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Pro')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+
+# /////////////////////////////////// ITERATE JOINING GAME TENNIS-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....TENNIS-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:tennis], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+# /////////////////////////////////// ITERATE JOINING GAME RUNNING-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....RUNNING-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:running], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+
+# /////////////////////////////////// ITERATE JOINING GAME RUNNING-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....RUNNING-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:running], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+# /////////////////////////////////// ITERATE JOINING GAME RUNNING-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....RUNNING-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:running], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+# /////////////////////////////////// ITERATE JOINING GAME VOLLEYBALL-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....VOLLEYBALL-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:volleyball], skill_level: 'Beginner')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+
+# /////////////////////////////////// ITERATE JOINING GAME TENNIS-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....TENNIS-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:tennis], skill_level: 'Pro')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+# /////////////////////////////////// ITERATE JOINING GAME TENNIS-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....TENNIS-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:tennis], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+
+# /////////////////////////////////// ITERATE JOINING GAME VOLLEYBALL-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....VOLLEYBALL-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:volleyball], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+
+# /////////////////////////////////// ITERATE JOINING GAME FOOTBALL-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....FOOTBALL-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:football], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+# /////////////////////////////////// ITERATE JOINING GAME YOGA-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....YOGA-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Beginner')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+
+# /////////////////////////////////// ITERATE JOINING GAME YOGA-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....YOGA-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Beginner')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+
+# /////////////////////////////////// ITERATE JOINING GAME RUN-PRO ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....RUN-PRO "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:running], skill_level: 'Pro')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+# /////////////////////////////////// ITERATE JOINING GAME BASKETBALL-PRO ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....BASKETBALL-PRO "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Pro')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+# /////////////////////////////////// ITERATE JOINING GAME BASKETBALL-PRO ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....BASKETBALL-PRO "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Pro')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+# /////////////////////////////////// ITERATE JOINING GAME BASKETBALL-PRO ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....BASKETBALL-PRO "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Pro')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+# /////////////////////////////////// ITERATE JOINING GAME FOOTBALL-PRO ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....FOOTBALL-PRO "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:football], skill_level: 'Pro')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+# /////////////////////////////////// ITERATE JOINING GAME YOGA-BEGINNER ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....YOGA-BEGINNER "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Beginner')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+# /////////////////////////////////// ITERATE JOINING GAME YOGA-BEGINNER ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....YOGA-BEGINNER "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Beginner')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
+# /////////////////////////////////// ITERATE JOINING GAME YOGA-INTERMEDIATE ///////////////////////////////////
+puts "Creating Male Players(game joiners) & Users(game host) for the game.....YOGA-INTERMEDIATE "
+search_results_man_4 = Unsplash::Photo.search("man face").take(4)
+4.times do |i|
+  user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  while !user.save
+    user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
+  end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
+  SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Intermediate')
+  choosen_match = activities_to_do.sample
+  counter = 0
+  while choosen_match.player_limit <= choosen_match.players.count
+    choosen_match = activities_to_do.sample
+    break if counter == 10
+    counter += 1
+  end
+  break if counter == 10
+  Player.create!(activity: choosen_match, user: user, accepted_at: Time.now)
+  puts "Player #{user.username} created"
+end
+
+
 puts "Connecting Chatrooms"
 Chatroom.connect_all_chatrooms
 
-# Create an array of images 40
-# Loop into the photos for each user not repeating (each user with his own pict)
-# Each user for the demo should have his own background pict

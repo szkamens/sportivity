@@ -1,10 +1,9 @@
 .btn-sport {
-  color: $white !important;
-  font-size: x-small;
+  color: $white1 !important;
+  font-size: 13px;
   padding: 3px 12px;
   border-radius: 180px;
-  background: $black;
-  border: 1px solid $orange;
+  background: $pink;
 }
 
 .btn-sport-fav-flex {
@@ -17,12 +16,11 @@
 }
 
 .btn-sport-fav {
-  color: $white;
-  font-size: x-small;
+  color: $white1;
+  font-size: 13px;
   padding: 8px 24px;
   border-radius: 180px;
-  background: $black;
-  border: 1px solid $orange;
+  background: $blue1;
   margin: 8px;
 }
 
@@ -36,22 +34,21 @@
 }
 
 .btn-primary {
-  color: $white !important;
+  color: $white1 !important;
   font-size: x-medium;
   padding: 8px 24px;
   border-radius: 180px;
-  background: $black;
-  border: 1px solid $orange;
+  background: $green1;
   margin: 8px;
+  border-style: none;
 }
 
 .btn-sign-page {
-  color: $white !important;
+  color: $white1 !important;
   font-size: x-small;
   padding: 8px 24px;
   border-radius: 180px;
-  background: $black;
-  border: 1px solid $orange;
+  background: $blue1;
 }
 
 .btn-log-out-user {

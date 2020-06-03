@@ -1,9 +1,10 @@
 .title-chat {
-  color: #f46b27;
+  color: $blue1;
+  font-size: 20px;
 }
 
 .title-chatroom {
-  color: #f46b27;
+  color: $blue1;
 }
 
 .message-container i {
@@ -16,7 +17,7 @@
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  height: 65%;
+  height: 77%;
   padding: 20px;
   max-height: calc(100vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
@@ -29,12 +30,12 @@
 }
 
 .btn-chat {
-  color: $white !important;
+  color: $white1 !important;
   font-size: x-medium;
   padding: 3px 12px;
   border-radius: 180px;
-  background: $black;
-  border: 1px solid $orange;
+  background: $blue1;
+  border-style: none;
 }
 
 .message-box input {
@@ -60,9 +61,8 @@
 .chatroom-card {
   overflow: hidden;
   background: $white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 28px;
-  border: 1px solid $orange;
   color: #0E0000;
 }
 
