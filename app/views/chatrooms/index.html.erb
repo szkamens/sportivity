@@ -1,11 +1,13 @@
 <div class="chatrooms-container">
-  <h1 class="title-chatroom">Inbox</h1>
+  <h1 class="title-chatroom">Activity Chatrooms</h1>
   <br>
   <% @chatrooms.each do |chatroom| %>
     <div class="conversations">
       <div class="chatroom-card">
         <div class="conversation-details">
-           <h2 class="mb-2"><%= link_to chatroom.activity.title, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.size > 0 ? chatroom.messages.last.id : ''}" %></h2>
+           <h4 class="mb-2">Chatroom for:
+            <br>
+            <%= link_to chatroom.activity.title.capitalize, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.size > 0 ? chatroom.messages.last.id : ''}" %></h4>
         </div>
       </div>
     </div>
