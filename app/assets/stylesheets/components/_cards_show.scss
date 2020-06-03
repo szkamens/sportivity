@@ -12,6 +12,7 @@
 .card-activity-show {
   background: $white;
   height: calc(100vh - 90px);
+  margin-bottom: 8px;
 }
 
 .card-activity-show > img {
@@ -45,6 +46,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  margin-bottom: 8px;
 }
 
 .card-activity-show-infos .card-activity-show-btn{
