@@ -1,24 +1,24 @@
-<div class='container-banner'>
+<div class="card-activity-show">
   <% if @user.background_photo.attached? %>
     <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
   <% else %>
-    <%= image_tag "running.jpg", crop: :fill, class: 'banner' %>
+    <%= image_tag "running_background.jpg", crop: :fill, class: 'banner' %>
   <% end %>
-  <div>
+  <div class="avatar-user-show">
   <% if @user.photo.attached? %>
-    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :thumb, gravity: :face, class: "container-banner avatar-x-large") %>
+    <%= cl_image_tag(user.photo.key, width: 200, height: 200, crop: :thumb, gravity: :face, class: "container-banner avatar-x-large-user-show") %>
   <% else %>
-    <%= image_tag "default_avatar.png", width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large" %>
+    <%= image_tag "default_avatar.png", width: 200, height: 200, crop: :fill, class:"container-banner avatar-x-large-user-show" %>
   <% end %>
-    <div class='banner username'>
-      <h1><%= user.username.upcase %></h1>
-    </div>
   </div>
-</div>
 
-<div class='container-user-show'>
-  <div class='row'>
-    <div class='card-act-desc'>
+  <div class="card-activity-show-infos">
+
+    <div>
+      <div class="show-header-user">
+        <h2 class='show-title'>About <%= user.username.capitalize %></h2>
+      </div>
+      <p class='show-paragraph'>
       <% if user.description.nil? || user.description == ""  %>
       <p><em><%= @user.username.capitalize %> loves sports, but doesn't love talking about
         <% if @user.gender == 'Male' %>
@@ -31,18 +31,25 @@
       <p>" <em><%= user.description %> </em>"</p>
       <% end %>
     </div>
-  </div>
-  <div class='row'>
-    <div class='btn-sport-fav-flex' >
-    <% user.sports.each  do |s| %>
-      <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
+    <br>
+  <div class='profile-sports'>
+    <div class='btn-sport-fav-user' >
+      <% user.sports.each  do |s| %>
+        <a class="btn-sport-fav" href="#"> <%= s.name %> </a>
       <% end %>
     </div>
   </div>
-  <div class='row'>
-    <div class='card-act-desc-joins'>
-      <p>Sportivities Joined: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= user.activities_joined.count %></strong> </p>
-      <p>Sportivities Created:&nbsp;&nbsp;  <strong><%= user.activities.count %></strong> </p>
+  <br>
+    <div class="card-activity-show-frame">
+      <div class="card-activity-show-players">
+        <p> <strong>Joined</strong> </p>
+        <p> <strong> <%= (user.activities_joined.count) %></strong> <%= user.activities_joined.count != 1 ? 'Activities' : 'Activity' %> </p>
+      </div>
+      <div class="divider-vertical-user"></div>
+      <div class="card-activity-show-skill">
+        <p> <strong> Created: </strong> </p>
+        <p> <strong> <%= (user.activities.count) %></strong> <%= user.activities.count != 1 ? 'Activities' : 'Activity' %> </p>
+      </div>
     </div>
   </div>
 </div>
