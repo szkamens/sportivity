@@ -31,3 +31,44 @@
   width: 350px;
   word-wrap: break-word;
 }
+.profile-sports {
+
+}
+
+//////// user show ////////////
+
+.divider-vertical-user{
+  width: 1px;
+  height: 50px;
+  background-color: $black;
+  opacity: .4;
+}
+.container-show-user {
+  display: flex;
+  padding: 0 90px;
+  height: calc(100vh - 70px);
+}
+.card-activity-show-user {
+  background: $white;
+  height: calc(100vh - 90px);
+}
+.card-activity-show-user > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.card-activity-show-user > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+.show-header-user {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 70px;
+
+  i {
+    font-size: 26px;
+    color: $black;
+  }
+}
