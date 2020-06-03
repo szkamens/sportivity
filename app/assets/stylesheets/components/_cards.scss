@@ -1,9 +1,8 @@
 .card-activity-index {
   overflow: hidden;
-  background: $white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 28px;
-  border: 1px solid $orange;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 20px;
 }
 
 .card-activity-index > img, .card-activity-index img.card-activity-image  {
@@ -13,18 +12,20 @@
 }
 
 .card-activity-index a {
-  color: $black;
+  color: $blue1;
 }
 
 .card-activity-index h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: $blue1;
 }
 
 .card-activity-index p {
   font-size: 12px;
   margin: 0;
+  color: $black;
 }
 
 .card-activity-index .card-activity-index-infos {
@@ -43,7 +44,7 @@
   left: 16px;
   top: -36px;
   width: fit-content;
-  font-size: 10px;
+  font-size: 13px;
   text-decoration: none;
 }
 
@@ -95,10 +96,13 @@
   margin-left: 4px;
   margin-bottom: 18px;
   margin-right: 41px;
+  p {
+  color: $blue1;
+  }
 }
 
 .container-index {
-  background-color: $black;
+  background-color: $white;
   padding: 0 90px;
 }
 .container-index h1 {

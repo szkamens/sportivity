@@ -1,9 +1,10 @@
 // Specific CSS for your home-page
 .homepage-container {
-  background-color: $black;
+  background-color: $white1;
   width: 100%;
   height: 100%;
-  color: $white;
+  color: $blue1;
+  text-align: -webkit-center;
 }
 
 .homepage-title-logo-container {
@@ -26,6 +27,8 @@
 
 .homepage-sportivity-title {
   font-size: 60px;
+  color: $green1;
+  margin-top: 309px;
 }
 
 .homepage-subtitle-container {

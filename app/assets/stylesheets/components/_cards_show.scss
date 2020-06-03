@@ -1,12 +1,12 @@
 .container-index {
-  background-color: $black;
+  background-color: $white1;
   padding: 0 90px;
 }
 
 .container-show {
-  background-color: $black;
-  padding: 0 90px;
+  background-color: $white1;
   height: calc(100vh - 70px);
+  border-radius: 6px;
 }
 
 .card-activity-show {
@@ -24,6 +24,7 @@
   font-size: 26px;
   margin-bottom: 15px;
   font-weight: bold;
+  color: $blue1;
 }
 
 .card-activity-show p {
@@ -99,15 +100,33 @@
   padding: 6px;
 }
 
-.btn-action {
-  background-color: $orange;
-  color: $black;
+.btn-edit {
+  background-color: $white1;
+  color: $green1;
   border-radius: 180px;
   padding: 8px 24px;
-  border: 0.2px solid $black;
+  border-style: solid;
+  border-color: $green1;
   font-weight: bold;
 }
 
+.btn-leave {
+  background-color: $white1;
+  color: $pink;
+  border-radius: 180px;
+  padding: 8px 24px;
+  border-style: solid;
+  border-color: $pink;
+  font-weight: bold;
+}
+
+.btn-join {
+  background-color: $green1;
+  color: $white1;
+  border-radius: 180px;
+  padding: 8px 24px;
+  font-weight: bold;
+}
 
 a.btn-action {
   text-decoration: none;
@@ -115,13 +134,13 @@ a.btn-action {
 
 .btn-action i {
   font-size: 16px;
-  color: $black;
+  color: $green1;
 }
 
 
 .arrow {
   height: 10px;
-  border: solid $orange;
+  border: solid $blue1;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
@@ -145,12 +164,10 @@ a.btn-action {
 }
 
 .card-activity-show-btn {
-  background-color: $black;
-  color: white;
+  background-color: $pink;
+  color: $white1;
   border-radius: 180px;
   padding: 8px 24px;
-  border: 1px solid $orange;
   font-size: 14px;
-  font-weight: lighter;
 }
 
