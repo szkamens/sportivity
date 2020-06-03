@@ -5,9 +5,11 @@
     <div class="conversations">
       <div class="chatroom-card">
         <div class="conversation-details">
-           <h4 class="mb-2">Chatroom for:
+           <div class="name-chat">
+            <%= link_to chatroom.activity.title.capitalize, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.size > 0 ? chatroom.messages.last.id : ''}" %>
             <br>
-            <%= link_to chatroom.activity.title.capitalize, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.size > 0 ? chatroom.messages.last.id : ''}" %></h4>
+            <p>Chat with players 💬</p>
+            </div>
         </div>
       </div>
     </div>

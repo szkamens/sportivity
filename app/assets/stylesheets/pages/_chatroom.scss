@@ -1,10 +1,30 @@
 .title-chat {
-  color: $blue1;
+  color: $white1;
   font-size: 20px;
+  border-radius: 8px;
+  padding: 8px 25px;
+  text-align: center;
+  background-color: #0C79BE;
 }
 
 .title-chatroom {
-  color: $blue1;
+  color: #F7f8F2;
+  background-color: #0C79BE;
+  border-radius: 8px;
+  padding: 8px 25px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.name-chat p {
+  font-size: 17px;
+}
+
+.conversation-details a {
+  color: #0C79BE !important;
+  font-size: medium;
+  font-size: 20px !important;
+  font-weight: bold;
 }
 
 .message-container i {
