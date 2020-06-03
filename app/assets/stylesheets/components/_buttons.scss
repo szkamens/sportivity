@@ -37,19 +37,55 @@
   color: $white1 !important;
   font-size: x-medium;
   padding: 8px 24px;
-  border-radius: 180px;
+  border-radius: 8px;
   background: $green1;
   margin: 8px;
   border-style: none;
   margin-bottom: 8px !important;
 }
 
-.btn-sign-page {
+.btn-sign-page-login {
   color: $white1 !important;
   font-size: x-small;
   padding: 8px 24px;
-  border-radius: 180px;
+  border-radius: 8px;
   background: $blue1;
+  width: 54vw;
+}
+
+.btn-login-page-login {
+  color: #F7f8F2 !important;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: $blue1;
+  width: 92vw;
+  height: 7vh;
+  font-size: medium !important;
+}
+
+.btn-signup-page-login {
+  color: $blue1 !important;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: thin;
+  border-color: $blue1;
+  background: $white1;
+  width: 92vw;
+  height: 7vh;
+  font-size: medium !important;
+}
+
+.btn-sign-page-signup {
+  color: $blue1 !important;
+  font-size: x-small;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: thin;
+  border-color: $blue1;
+  background: $white1;
+  width: 54vw;
 }
 
 .btn-log-out-user {

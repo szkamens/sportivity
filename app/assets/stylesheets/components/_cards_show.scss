@@ -104,21 +104,21 @@
 }
 
 .btn-edit {
-  background-color: $white1;
   color: $green1;
-  border-radius: 180px;
+  border-radius: 8px;
   padding: 8px 24px;
   border-style: solid;
+  border-width: thin;
   border-color: $green1;
   font-weight: bold;
 }
 
 .btn-leave {
-  background-color: $white1;
   color: $pink;
-  border-radius: 180px;
+  border-radius: 8px;
   padding: 8px 24px;
   border-style: solid;
+  border-width: thin;
   border-color: $pink;
   font-weight: bold;
 }
@@ -126,7 +126,9 @@
 .btn-join {
   background-color: $green1;
   color: $white1;
-  border-radius: 180px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 8px;
   padding: 8px 24px;
   font-weight: bold;
 }
