@@ -1,11 +1,11 @@
 <div class="chatroom-container">
-  <h1 class="title-chat">#<%= @chatroom.activity.title.capitalize %></h1>
+  <h1 class="title-chat">#<%= @chatroom.activity.title %></h1>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
         <i class="author">
-          <span><%= message.user.username %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <span><strong><%= message.user.username %></strong></span>
+          <small><%= message.created_at.getlocal.strftime("%a %b %e at %l:%M%p") %></small>
         </i>
         <p><%= message.content %></p>
       </div>
