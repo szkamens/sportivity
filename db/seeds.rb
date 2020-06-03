@@ -170,7 +170,7 @@ naftalis_yoga_session = Activity.create!(
   skill_level: 'Pro',
   user: naftali,
   sport: sports[:yoga],
-  title: "yoga with Nati",
+  title: "Noga with Nati",
   description: "Come & Relax with nice people!"
 )
 puts "naftalis_yoga_session created"
@@ -218,7 +218,7 @@ vincents_running_session = Activity.create!(
   user: vincent,
   sport: sports[:running],
   title: "Run Vincent run!",
-  description: "I will teach you the best technic for running in hard surfaces!"
+  description: "I will teach you the best technique for running in hard surfaces!"
 )
 puts "vincents_running_session created"
 vincents_running_session.add_player(vincent)
@@ -337,7 +337,7 @@ matan_voleyball_match = Activity.create!(
   skill_level: 'Pro',
   user: matan,
   sport: sports[:volleyball],
-  title: "Pro Voleyball match!",
+  title: "Pro Volleyball match!",
   description: "Come and join our weekly match"
 )
 puts "matan_voleyball_match created"
@@ -404,8 +404,8 @@ eitan_voleyball_match = Activity.create!(
   skill_level: 'Intermediate',
   user: eitan,
   sport: sports[:volleyball],
-  title: "Voley dream team game!",
-  description: "5 vs 5 voley match with pro players"
+  title: "Volley dream team game!",
+  description: "5 vs 5 volley match with pro players"
 )
 puts "eitan_voleyball_match created"
 eitan_voleyball_match.add_player(eitan)
@@ -586,7 +586,7 @@ tal_voleyball_match = Activity.create!(
   skill_level: 'Beginner',
   user: tal,
   sport: sports[:volleyball],
-  title: "Best Voley training course!",
+  title: "Best Volley training course!",
   description: "Join us in our intensive training course"
 )
 puts "tal_voleyball_match created"
@@ -704,8 +704,8 @@ james_voleyball_match = Activity.create!(
   skill_level: 'Intermediate',
   user: james,
   sport: sports[:volleyball],
-  title: "Come and train Voley!",
-  description: "If you wanna train Voley this is the place"
+  title: "Come and train volley!",
+  description: "If you wanna train volley, this is the place"
 )
 puts "james_voleyball_match created"
 james_voleyball_match.add_player(james)
