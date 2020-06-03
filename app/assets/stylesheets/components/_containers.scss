@@ -34,9 +34,25 @@
 
 }
 
+//////// user show ////////////
+
 .divider-vertical-user{
   width: 1px;
   height: 50px;
   background-color: $black;
   opacity: .4;
+}
+.container-show-user {
+  display: flex;
+  padding: 0 90px;
+  height: calc(100vh - 70px);
+}
+.card-activity-show-user {
+  background: $white;
+  height: calc(100vh - 90px);
+}
+.card-activity-show-user > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
