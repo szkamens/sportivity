@@ -1,5 +1,5 @@
 require 'faker'
-
+require 'open-uri'
 
 ############################# Destroy Chatrooms #############################
 Chatroom.destroy_all
@@ -36,14 +36,30 @@ end
 # Descriptions for the "User" table.
 descriptions = []
 
-descriptions << "Doing sports with me it will be a great oportunity to level up your skills!"
+descriptions << "Level up your skills and practice some sports with me!"
 descriptions << "Sport lover!"
-descriptions << "I just moved to Tel Aviv and wanna practice sports with other people"
+descriptions << "I just moved to town and wanna practice sports with other people"
 descriptions << "Looking for another people to play around my area!"
-descriptions << "I consider myself a good partner to do sports!"
-descriptions << "I pay the coke dont matter the result!"
-descriptions << "Wondering playing with people of my same skill level!"
-descriptions << "I use to play this sport when I was child!"
+descriptions << "Be aware -- I consider myself a challenging partner to do sports LOL!"
+descriptions << "Don't hate tha playa hate tha game (that's what I always say)!"
+descriptions << "Looking to play with people at my same skill level!"
+descriptions << "Love the great outdoors and especially sporting it!"
+descriptions << "For me, hitting the cement is the best feeling!"
+descriptions << "Hustle bustle sporty bustle - that's me haha!"
+descriptions << "Been practicing since I was kid, could always use more practice!"
+descriptions << "Coach is my best friend :) "
+descriptions << "Nothing like the sound of swish IMO LOL"
+descriptions << "Over here to find a regular buddy to sport with."
+descriptions << "Always looking for a sport time!"
+descriptions << "Never come home when the bell rings"
+descriptions << "Momma be callin' askin where I'm at. Always on the court!"
+descriptions << "8 on 8 anytime of day"
+descriptions << "Rain or shine, I'm on the line!"
+descriptions << "LMK if you know someone who enjoys a run"
+descriptions << "My favorite shape is ball ;) "
+descriptions << "Got Game?"
+descriptions << "Sweating it out"
+descriptions << "Go LARGE or go HOME"
 
 ############################# Destroy database #############################
 ## Cleaning Database
@@ -58,7 +74,6 @@ Sport.destroy_all
 p 4
 User.destroy_all
 p 5
-
 
 ############################# SPORTS TABLE #############################
 ## "Sports" table seed
@@ -78,18 +93,21 @@ puts 'Sports Created!'
 
 
 # ///// ARRAY OF LOCATIONS ////
-locations = ["Arlozorov 100, Tel Aviv", "Balfour 200, Tel Aviv", "Begin 350, Tel Aviv",
-            "Ben Gurion 380, Tel Aviv", "Bialik 180, Tel Aviv", "Dizengoff 100, Tel Aviv",
-            "Herzl 400, Tel Aviv", "Rabin 580, Tel Aviv", "Ibn Gabirol 200, Tel Aviv",
-            "Ibn Gabirol 250, Tel Aviv", "Ibn Gabirol 50, Tel Aviv", "Ibn Gabirol 70, Tel Aviv",
-            "Dizengoff 130, Tel Aviv", "Dizengoff 500, Tel Aviv", "Dizengoff 120, Tel Aviv",
-            "Balfour 230, Tel Aviv", "Balfour 100, Tel Aviv", "Balfour 240, Tel Aviv"]
+locations = ["Arlozorov 100, Tel Aviv", "Balfour 200, Herziliya", "Begin 350, Jerusalem",
+            "Ben Gurion 380, Rishon", "Bialik 180, Rechovot", "Dizengoff 100, Haifa",
+            "Herzl 400, Eilat", "Rabin 580, Ashdod", "Ibn Gabirol 200, Kfar Saba",
+            "Ibn Gabirol 250, Tzfat", "Ibn Gabirol 50, Tiveria", "Ibn Gabirol 70, Netanya",
+            "Dizengoff 130, Ashkelon", "Dizengoff 500, Bat Yam", "Dizengoff 120, Naharia",
+            "Balfour 230, Mitzpe Ramon", "Balfour 100, Efrat", "Balfour 240, Beer Sheva"]
 
 
 
 # ///////////// CREATING AN ACTIVITY BY HAND BY ARIEL (FOOTBALL) /////////////
 
 ariel = User.create!(email: 'ariel@ariel.com', password: '123456', gender: 'Male', username: 'ariel')
+
+ariel.photo.attach(io: File.open("app/assets/images/users/ariel.jpg"), filename: "ariel.jpg")
+ariel.save
 
 puts "creating ariels_soccer_match"
 SportUser.create!(user: ariel, sport: sports[:football], skill_level: 'Intermediate')
@@ -110,6 +128,9 @@ ariels_soccer_match.add_player(ariel)
 
 schneur = User.create!(email: 'schneur@schneur.com', password: '123456', gender: 'Male', username: 'schneur')
 
+schneur.photo.attach(io: File.open("app/assets/images/users/schneur.jpg"), filename: "schneur.jpg")
+schneur.save
+
 puts "creating schneurs_tennis_match"
 SportUser.create!(user: schneur, sport: sports[:tennis], skill_level: 'Intermediate')
 start_time = Time.now + (60 * 60 * 24 * rand(1..7))
@@ -128,6 +149,9 @@ puts "schneurs_tennis_match created"
 schneurs_tennis_match.add_player(schneur)
 
 naftali = User.create!(email: 'naftali@naftali.com', password: '123456', gender: 'Male', username: 'naftali')
+
+naftali.photo.attach(io: File.open("app/assets/images/users/naftali.jpg"), filename: "naftali.jpg")
+naftali.save
 
 puts "creating naftalis_yoga_session"
 SportUser.create!(user: naftali, sport: sports[:yoga], skill_level: 'Pro')
@@ -148,6 +172,9 @@ naftalis_yoga_session.add_player(naftali)
 
 vincent = User.create!(email: 'vincent@vincent.com', password: '123456', gender: 'Male', username: 'vincent')
 
+vincent.photo.attach(io: File.open("app/assets/images/users/vincent.jpg"), filename: "vincent.jpg")
+vincent.save
+
 puts "creating vincents_running_session"
 SportUser.create!(user: vincent, sport: sports[:running], skill_level: 'Beginner')
 start_time = Time.now + (60 * 60 * 24 * rand(1..7))
@@ -166,6 +193,9 @@ puts "vincents_running_session created"
 vincents_running_session.add_player(vincent)
 
 omer = User.create!(email: 'omer@omer.com', password: '123456', gender: 'Male', username: 'omer')
+
+omer.photo.attach(io: File.open("app/assets/images/users/omer.jpg"), filename: "omer.jpg")
+omer.save
 
 puts "creating omers_basketball_match"
 SportUser.create!(user: omer, sport: sports[:basketball], skill_level: 'Pro')
@@ -186,6 +216,9 @@ omers_basketball_match.add_player(omer)
 
 david = User.create!(email: 'david@david.com', password: '123456', gender: 'Male', username: 'david')
 
+david.photo.attach(io: File.open("app/assets/images/users/david.jpg"), filename: "david.jpg")
+david.save
+
 puts "creating davids_basketball_match"
 SportUser.create!(user: david, sport: sports[:basketball], skill_level: 'Pro')
 start_time = Time.now + (60 * 60 * 24 * rand(1..7))
@@ -204,6 +237,9 @@ puts "davids_basketball_match created"
 davids_basketball_match.add_player(david)
 
 yair = User.create!(email: 'yair@yair.com', password: '123456', gender: 'Male', username: 'yair')
+
+yair.photo.attach(io: File.open("app/assets/images/users/yair.jpg"), filename: "yair.jpg")
+yair.save
 
 puts "creating yairs_basketball_match"
 SportUser.create!(user: yair, sport: sports[:basketball], skill_level: 'Pro')
@@ -236,11 +272,16 @@ activities_to_do = [ariels_soccer_match, schneurs_tennis_match,
 
 puts "Creating Male Players(game joiners) & Users(game host) for the game.....SOCCER-INTERMIDATE"
 
+search_results_man_1 = Unsplash::Photo.search("man face").take(5)
+
 5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_man_1[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:football], skill_level: 'Intermediate')
   SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Intermediate')
   choosen_match = activities_to_do.sample
@@ -253,12 +294,15 @@ end
 
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game.....SOCCER-INTERMIDATE"
-
+search_results_female_1 = Unsplash::Photo.search("female face").take(3)
 3.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_female_1[i].urls.small)
+  user.photo.attach(io: file, filename: "female-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:football], skill_level: 'Intermediate')
   SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Intermediate')
     choosen_match = activities_to_do.sample
@@ -274,11 +318,16 @@ end
 # /////////////////////////////////// ITERATE JOINING GAME TENNIS-INTERMIDATE ///////////////////////////////////
 puts "Creating Male Players(game joiners) & Users(game host) for the game..... TENNIS-INTERMIDATE"
 
+search_results_man_2 = Unsplash::Photo.search("man face").take(3)
+
 3.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_man_2[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:tennis], skill_level: 'Intermediate')
   SportUser.create!(user: user, sport: sports[:football], skill_level: 'Intermediate')
   choosen_match = activities_to_do.sample
@@ -291,12 +340,15 @@ end
 
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game..... TENNIS-INTERMIDATE"
-
+search_results_female_2 = Unsplash::Photo.search("female face").take(4)
 4.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_female_2[i].urls.small)
+  user.photo.attach(io: file, filename: "female-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:tennis], skill_level: 'Intermediate')
   SportUser.create!(user: user, sport: sports[:football], skill_level: 'Intermediate')
     choosen_match = activities_to_do.sample
@@ -310,12 +362,15 @@ end
 
 # /////////////////////////////////// ITERATE JOINING GAME YOGA-PRO ///////////////////////////////////
 puts "Creating Male Players(game joiners) & Users(game host) for the game..... YOGA-PRO"
-
+search_results_man_3 = Unsplash::Photo.search("man face").take(4)
 4.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_man_3[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Pro')
   SportUser.create!(user: user, sport: sports[:running], skill_level: 'Beginner')
   choosen_match = activities_to_do.sample
@@ -328,12 +383,15 @@ end
 
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game..... YOGA-PRO"
-
+search_results_female_3 = Unsplash::Photo.search("female face").take(2)
 2.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_female_3[i].urls.small)
+  user.photo.attach(io: file, filename: "female-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:yoga], skill_level: 'Pro')
   SportUser.create!(user: user, sport: sports[:running], skill_level: 'Beginner')
     choosen_match = activities_to_do.sample
@@ -347,12 +405,15 @@ end
 
 # /////////////////////////////////// ITERATE JOINING GAME RUNNING-BEGGINER ///////////////////////////////////
 puts "Creating Male Players(game joiners) & Users(game host) for the game.....RUNNING-BEGGINER"
-
+search_results_man_4 = Unsplash::Photo.search("man face").take(5)
 5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Male', username: Faker::Name.male_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_man_4[i].urls.small)
+  user.photo.attach(io: file, filename: "male-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:running], skill_level: 'Beginner')
   SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Pro')
   choosen_match = activities_to_do.sample
@@ -369,12 +430,15 @@ end
 
 
 puts "Creating Female Players(game joiners) & Users(game host) for the game.....RUNNING-BEGGINER"
-
+search_results_female_4 = Unsplash::Photo.search("female face").take(5)
 5.times do |i|
   user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   while !user.save
     user = User.new(email: Faker::Internet.email, password: '123456', gender: 'Female', username: Faker::Name.female_first_name, description: descriptions.shuffle.last)
   end
+  file = URI.open(search_results_female_4[i].urls.small)
+  user.photo.attach(io: file, filename: "female-#{i}.png", content_type: 'image/png')
+  user.save
   SportUser.create!(user: user, sport: sports[:running], skill_level: 'Beginner')
   SportUser.create!(user: user, sport: sports[:basketball], skill_level: 'Pro')
   choosen_match = activities_to_do.sample
@@ -390,11 +454,9 @@ puts "Creating Female Players(game joiners) & Users(game host) for the game.....
   puts "Player #{user.username} created"
 end
 
-
 puts "Connecting Chatrooms"
 Chatroom.connect_all_chatrooms
 
 # Create an array of images 40
 # Loop into the photos for each user not repeating (each user with his own pict)
 # Each user for the demo should have his own background pict
-
