@@ -145,8 +145,8 @@ schneurs_tennis_match = Activity.create!(
   skill_level: 'Intermediate',
   user: schneur,
   sport: sports[:tennis],
-  title: "tennis singles. We have severals courts to play in!",
-  description: "Come & Join me. The loser pays the beers!"
+  title: "Tennis singles!",
+  description: "Come & join. Loser pays the beers! 🍻"
 )
 puts "schneurs_tennis_match created"
 schneurs_tennis_match.add_player(schneur)
@@ -170,8 +170,8 @@ naftalis_yoga_session = Activity.create!(
   skill_level: 'Pro',
   user: naftali,
   sport: sports[:yoga],
-  title: "yoga with Nati",
-  description: "Come & Relax with nice people!"
+  title: "Yoga with Nati",
+  description: "Come & relax with nice people!"
 )
 puts "naftalis_yoga_session created"
 naftalis_yoga_session.add_player(naftali)
@@ -218,7 +218,7 @@ vincents_running_session = Activity.create!(
   user: vincent,
   sport: sports[:running],
   title: "Run Vincent run!",
-  description: "I will teach you the best technic for running in hard surfaces!"
+  description: "I will teach you the best technique for running in hard surfaces!"
 )
 puts "vincents_running_session created"
 vincents_running_session.add_player(vincent)
@@ -240,8 +240,8 @@ omers_basketball_match = Activity.create!(
   skill_level: 'Pro',
   user: omer,
   sport: sports[:basketball],
-  title: "I use to play with NBA players!",
-  description: "Now I like playing for hobby. Glad if you join me! 4 teams of 4 players!"
+  title: "Play with a former pro!",
+  description: "Now I like playing for a hobby. Happy if you can join me for a 4-on-4!"
 )
 puts "omers_basketball_match created"
 omers_basketball_match.add_player(omer)
@@ -312,7 +312,7 @@ yairs_basketball_match = Activity.create!(
   user: yair,
   sport: sports[:basketball],
   title: "Come and try your skills!",
-  description: "Prefer practicing Karate... but let give it a try to this sport!"
+  description: "Prefer practicing Karate... but let's give this sport a try!"
 )
 puts "yairs_basketball_match created"
 yairs_basketball_match.add_player(yair)
@@ -337,7 +337,7 @@ matan_voleyball_match = Activity.create!(
   skill_level: 'Pro',
   user: matan,
   sport: sports[:volleyball],
-  title: "Pro Voleyball match!",
+  title: "Pro volleyball match!",
   description: "Come and join our weekly match"
 )
 puts "matan_voleyball_match created"
@@ -360,7 +360,7 @@ rans_running_session = Activity.create!(
   user: ran,
   sport: sports[:running],
   title: "Run challenge!",
-  description: "We wanna cross the 6 km!"
+  description: "We wanna cross 6K!"
 )
 puts "rans_running_session created"
 rans_running_session.add_player(ran)
@@ -404,8 +404,8 @@ eitan_voleyball_match = Activity.create!(
   skill_level: 'Intermediate',
   user: eitan,
   sport: sports[:volleyball],
-  title: "Voley dream team game!",
-  description: "5 vs 5 voley match with pro players"
+  title: "Volley dream team game!",
+  description: "5 vs 5 volley match with pro players"
 )
 puts "eitan_voleyball_match created"
 eitan_voleyball_match.add_player(eitan)
@@ -472,7 +472,7 @@ lucas_football_match = Activity.create!(
   user: lucas,
   sport: sports[:football],
   title: "11 vs 11 game!",
-  description: "Play like professional. Join us!"
+  description: "Play like a professional. Join us!"
 )
 puts "lucas_voleyball_match created"
 lucas_football_match.add_player(lucas)
@@ -496,7 +496,7 @@ gaby_football_match = Activity.create!(
   user: gaby,
   sport: sports[:football],
   title: "2 vs 2 indoor soccer",
-  description: "Show your skill in this match."
+  description: "Show us your skill in this match."
 )
 puts "gaby_football_match created"
 gaby_football_match.add_player(gaby)
@@ -518,7 +518,7 @@ tomer_yoga = Activity.create!(
   user: tomer,
   sport: sports[:yoga],
   title: "Yoga partners nearby?",
-  description: "Yoga & Chilling with new friends"
+  description: "Yoga & chilling with new friends"
 )
 puts "tomer_yoga created"
 tomer_yoga.add_player(tomer)
@@ -540,7 +540,7 @@ natan_tennis_match = Activity.create!(
   skill_level: 'Beginner',
   user: natan,
   sport: sports[:tennis],
-  title: "Someone teach me tennis?",
+  title: "Can someone teach me tennis?",
   description: "Wanna learn tennis. SOS!"
 )
 puts "natan_tennis_match created"
@@ -565,7 +565,7 @@ amos_football_match = Activity.create!(
   user: amos,
   sport: sports[:football],
   title: "3 vs 3 new style soccer",
-  description: "Play this brandnew and fun sport."
+  description: "Play this fun sport with me!."
 )
 puts "amos_football_match created"
 amos_football_match.add_player(amos)
@@ -586,7 +586,7 @@ tal_voleyball_match = Activity.create!(
   skill_level: 'Beginner',
   user: tal,
   sport: sports[:volleyball],
-  title: "Best Voley training course!",
+  title: "Best volley training course!",
   description: "Join us in our intensive training course"
 )
 puts "tal_voleyball_match created"
@@ -635,7 +635,7 @@ elias_basketball_match = Activity.create!(
   user: elias,
   sport: sports[:basketball],
   title: "Wanna exercise?",
-  description: "I wanna run a little bit. Join please!"
+  description: "I wanna run a bit. Join me!"
 )
 puts "elias_basketball_match created"
 elias_basketball_match.add_player(elias)
@@ -704,8 +704,8 @@ james_voleyball_match = Activity.create!(
   skill_level: 'Intermediate',
   user: james,
   sport: sports[:volleyball],
-  title: "Come and train Voley!",
-  description: "If you wanna train Voley this is the place"
+  title: "Come and train volleyball!",
+  description: "If you wanna train volley this is the place"
 )
 puts "james_voleyball_match created"
 james_voleyball_match.add_player(james)
