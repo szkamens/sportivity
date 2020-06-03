@@ -1,0 +1,42 @@
+<div class='container-show mb-10 p-3'>
+
+  <div class="card-activity-show border-bottom">
+    <% if @user.background_photo.attached? %>
+      <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
+    <% else %>
+      <%= image_tag "running.jpg", crop: :fill, class: 'banner' %>
+    <% end %>
+
+    <div class="card-activity-show-infos">
+
+      <div>
+        <div class="show-header">
+          <h2 class='show-title'>About <%= user.username.capitalize %></h2>
+          <%= link_to edit_user_path(@user) do%><i class="fas fa-edit"></i><% end %>
+        </div>
+        <p class='show-paragraph'>
+        <% if user.description.nil? || user.description == "" %>
+          <p><em>Welcome <%= user.username.capitalize %>, add something about yourself...</em></p>
+        <% else %>
+          <p><em> <%= user.description %> </em></p>
+        <% end %></p>
+      </div>
+
+      <div class="card-activity-show-frame">
+        <div class="card-activity-show-players">
+          <p> <strong>Joined</strong> </p>
+          <p> <strong> <%= user.activities_joined.count %> </strong> Activites </p>
+        </div>
+        <div class="divider-vertical"></div>
+        <div class="card-activity-show-skill">
+          <p> <strong> Created: </strong> </p>
+          <p> <strong> <%= user.activities.count %></strong> Activites</p>
+        </div>
+      </div>
+
+        <div class= "show-btn-action">
+          <%= link_to destroy_user_session_path, method: :delete, class: "btn-action" do %>Log Out<% end %>
+        </div>
+    </div>
+  </div>
+</div>
