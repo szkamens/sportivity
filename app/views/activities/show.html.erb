@@ -14,10 +14,10 @@
       <div>
         <div class="show-header">
         <% if @activity.is_owner?(current_user) %>
-        <h2 class='show-title'><%= @activity.title.capitalize %></h2>
+        <h2 class='show-title'><%= @activity.title %></h2>
         <%= link_to activity_path(@activity), method: :delete, data: {confirm: 'Are you sure?'} do %><i class="fas fa-trash"></i><% end %>
         <% else %>
-        <h2 class='show-title'><%= @activity.title.capitalize %></h2>
+        <h2 class='show-title'><%= @activity.title %></h2>
         <% end %>
         </div>
         <p class='show-paragraph'><%= '🗓'  %> <%= @activity.start_time.strftime("%A, %B %-d, %H:%M -") %> <%= @activity.end_time.strftime("%H:%M")%> </p>

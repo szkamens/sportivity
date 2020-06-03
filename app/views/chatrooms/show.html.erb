@@ -1,5 +1,5 @@
 <div class="chatroom-container">
-  <h1 class="title-chat">#<%= @chatroom.activity.title.capitalize %></h1>
+  <h1 class="title-chat">#<%= @chatroom.activity.title %></h1>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">

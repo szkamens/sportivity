@@ -6,7 +6,7 @@
       <div class="chatroom-card">
         <div class="conversation-details">
            <div class="name-chat">
-            <%= link_to chatroom.activity.title.capitalize, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.size > 0 ? chatroom.messages.last.id : ''}" %>
+            <%= link_to chatroom.activity.title, "#{activity_chatroom_url(chatroom.activity, chatroom)}#message-#{chatroom.messages.size > 0 ? chatroom.messages.last.id : ''}" %>
             <br>
             <p>Chat with players 💬</p>
             </div>
