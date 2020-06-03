@@ -1,6 +1,6 @@
 .container-dash {
-  background-color: $black;
-  color: $white;
+  background-color: $white1;
+  color: $blue1;
   height: 100%;
 }
 
@@ -15,20 +15,28 @@
 }
 
 .btn-dashboard {
-  color: $white !important;
-  font-size: x-medium;
+  color: $white1 !important;
+  font-size: 18px;
   padding: 8px 24px;
   border-radius: 180px;
-  background: $black;
-  border: 1px solid $orange;
+  background: $blue1;
+  font-weight: bold;
+ }
+
+ .btn-dash-game {
+  color: $blue1 !important;
+  font-size: 18px;
+  background: transparent;
+  padding: 8px 24px;
+  border-radius: 180px;
+  font-weight: bold;
  }
 
 .card-activity-dash {
   overflow: hidden;
   background: $white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 28px;
-  border: 1px solid $orange;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 20px;
   color: #0E0000;
 }
 
@@ -37,13 +45,14 @@
 }
 
 .card-activity-dash h2 {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: bold;
   margin: 0;
+  color: $blue1;
 }
 
 .card-activity-dash p {
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -52,7 +61,6 @@
   justify-content: space-between;
   align-items: stretch;
   position: relative;
-  margin-bottom: -14px;
   display: flex;
 
   .left-side {
@@ -66,6 +74,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    padding-top: 10px;
   }
 }
 
@@ -74,6 +83,6 @@
 }
 
 a.chat-dash {
-  font-size: 30px;
+  font-size: 38px;
   text-decoration: none;
 }
