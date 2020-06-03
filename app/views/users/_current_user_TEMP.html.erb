@@ -2,7 +2,7 @@
   <% if @user.background_photo.attached? %>
     <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
   <% else %>
-    <%= image_tag "running.jpg", crop: :fill, class: 'banner' %>
+    <%= image_tag "running_background.jpg", crop: :fill, class: 'banner' %>
   <% end %>
   <div class="avatar-user-show">
   <% if @user.photo.attached? %>

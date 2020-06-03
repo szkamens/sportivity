@@ -2,7 +2,7 @@
   <% if @user.background_photo.attached? %>
     <%= cl_image_tag(user.background_photo.key, crop: :fill, class: 'banner') %>
   <% else %>
-    <%= image_tag "running.jpg", crop: :fill, class: 'banner' %>
+    <%= image_tag "running_background.jpg", crop: :fill, class: 'banner' %>
   <% end %>
   <div class="avatar-user-show">
   <% if @user.photo.attached? %>
@@ -31,7 +31,6 @@
       <p>" <em><%= user.description %> </em>"</p>
       <% end %>
     </div>
-
   <div class='profile-sports'>
     <div class='btn-sport-fav-user' >
       <% user.sports.each  do |s| %>
@@ -43,12 +42,12 @@
     <div class="card-activity-show-frame">
       <div class="card-activity-show-players">
         <p> <strong>Joined</strong> </p>
-        <p> <strong> <%= (user.activities_joined.count) %></strong> <%= user.activities_joined.count > 1 ? 'Activities' : 'Activity' %> </p>
+        <p> <strong> <%= (user.activities_joined.count) %></strong> <%= user.activities_joined.count != 1 ? 'Activities' : 'Activity' %> </p>
       </div>
       <div class="divider-vertical-user"></div>
       <div class="card-activity-show-skill">
         <p> <strong> Created: </strong> </p>
-        <p> <strong> <%= (user.activities.count) %></strong> <%= user.activities.count > 1 ? 'Activities' : 'Activity' %> </p>
+        <p> <strong> <%= (user.activities.count) %></strong> <%= user.activities.count != 1 ? 'Activities' : 'Activity' %> </p>
       </div>
     </div>
   </div>
