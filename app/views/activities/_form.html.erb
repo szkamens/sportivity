@@ -6,12 +6,12 @@
   <%= f.association :sport %>
   <div class="row">
     <div class="col">
-      <%= f.input :skill_level, collection: %w[Beginner Intermediate Pro], required: true %>
+      <%= f.input :skill_level, collection: %w[Beginner Intermediate Pro] %>
     </div>
     <div class="col">
       <label for="rangePlayer">Player limit</label>&nbsp;<output name="playerOutputName" id="playerOutputId">10</output>
       <br>
-      <input type="range" name="activity[player_limit]" id="playerInputId" value="10" min="1" max="20" oninput="playerOutputId.value = playerInputId.value">
+      <input type="range" name="activity[player_limit]" id="playerInputId" value="10" min="1" max="21" oninput="playerOutputId.value = playerInputId.value">
 
     </div>
   </div>
