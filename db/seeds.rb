@@ -1,6 +1,9 @@
 require 'faker'
 require 'open-uri'
 
+############################# Destroy Chatrooms #############################
+Chatroom.destroy_all
+
 ############################# Random Pictures UNSPLASH #############################
 # TENNIS
 tennis_pic = "https://source.unsplash.com/1600x900/?tennis"
@@ -71,9 +74,6 @@ Sport.destroy_all
 p 4
 User.destroy_all
 p 5
-Chatroom.destroy_all
-p 6
-
 
 ############################# SPORTS TABLE #############################
 ## "Sports" table seed
@@ -106,6 +106,9 @@ locations = ["Arlozorov 100, Tel Aviv", "Balfour 200, Herziliya", "Begin 350, Je
 
 ariel = User.create!(email: 'ariel@ariel.com', password: '123456', gender: 'Male', username: 'ariel')
 
+ariel.photo.attach(io: File.open("app/assets/images/users/ariel.jpg"), filename: "ariel.jpg")
+ariel.save
+
 puts "creating ariels_soccer_match"
 SportUser.create!(user: ariel, sport: sports[:football], skill_level: 'Intermediate')
 start_time = Time.now + (60 * 60 * 24 * rand(1..7))
@@ -124,6 +127,9 @@ puts "ariels_soccer_match created"
 ariels_soccer_match.add_player(ariel)
 
 schneur = User.create!(email: 'schneur@schneur.com', password: '123456', gender: 'Male', username: 'schneur')
+
+schneur.photo.attach(io: File.open("app/assets/images/users/schneur.jpg"), filename: "schneur.jpg")
+schneur.save
 
 puts "creating schneurs_tennis_match"
 SportUser.create!(user: schneur, sport: sports[:tennis], skill_level: 'Intermediate')
@@ -144,6 +150,9 @@ schneurs_tennis_match.add_player(schneur)
 
 naftali = User.create!(email: 'naftali@naftali.com', password: '123456', gender: 'Male', username: 'naftali')
 
+naftali.photo.attach(io: File.open("app/assets/images/users/naftali.jpg"), filename: "naftali.jpg")
+naftali.save
+
 puts "creating naftalis_yoga_session"
 SportUser.create!(user: naftali, sport: sports[:yoga], skill_level: 'Pro')
 start_time = Time.now + (60 * 60 * 24 * rand(1..7))
@@ -162,6 +171,9 @@ puts "naftalis_yoga_session created"
 naftalis_yoga_session.add_player(naftali)
 
 vincent = User.create!(email: 'vincent@vincent.com', password: '123456', gender: 'Male', username: 'vincent')
+
+vincent.photo.attach(io: File.open("app/assets/images/users/vincent.jpg"), filename: "vincent.jpg")
+vincent.save
 
 puts "creating vincents_running_session"
 SportUser.create!(user: vincent, sport: sports[:running], skill_level: 'Beginner')
@@ -182,6 +194,9 @@ vincents_running_session.add_player(vincent)
 
 omer = User.create!(email: 'omer@omer.com', password: '123456', gender: 'Male', username: 'omer')
 
+omer.photo.attach(io: File.open("app/assets/images/users/omer.jpg"), filename: "omer.jpg")
+omer.save
+
 puts "creating omers_basketball_match"
 SportUser.create!(user: omer, sport: sports[:basketball], skill_level: 'Pro')
 start_time = Time.now + (60 * 60 * 24 * rand(1..7))
@@ -201,6 +216,9 @@ omers_basketball_match.add_player(omer)
 
 david = User.create!(email: 'david@david.com', password: '123456', gender: 'Male', username: 'david')
 
+david.photo.attach(io: File.open("app/assets/images/users/david.jpg"), filename: "david.jpg")
+david.save
+
 puts "creating davids_basketball_match"
 SportUser.create!(user: david, sport: sports[:basketball], skill_level: 'Pro')
 start_time = Time.now + (60 * 60 * 24 * rand(1..7))
@@ -219,6 +237,9 @@ puts "davids_basketball_match created"
 davids_basketball_match.add_player(david)
 
 yair = User.create!(email: 'yair@yair.com', password: '123456', gender: 'Male', username: 'yair')
+
+yair.photo.attach(io: File.open("app/assets/images/users/yair.jpg"), filename: "yair.jpg")
+yair.save
 
 puts "creating yairs_basketball_match"
 SportUser.create!(user: yair, sport: sports[:basketball], skill_level: 'Pro')
